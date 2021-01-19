@@ -4,8 +4,8 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import "./main.css";
 // import Button from '@material-ui/core/Button';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import TextField from '@material-ui/core/TextField';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
@@ -13,7 +13,7 @@ import Link from '@material-ui/core/Link';
 // import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-// import Container from '@material-ui/core/Container';
+import Container from '@material-ui/core/Container';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -60,7 +60,7 @@ export default function SignUp() {
   const classes = useStyles();
     return(
       <Formik
-      initialValues={{ email: "", password: "" }}
+      initialValues={{LastName: "", FirstName: "", email: "", password: "" }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           console.log("Logging in", values);
@@ -115,6 +115,9 @@ export default function SignUp() {
         } = props;
   
         return (
+            <Container className={classes.pap}>
+                <div className={classes.paper}>
+                <CssBaseline />
           <form onSubmit={handleSubmit} className={classes.form}>
             <Avatar className={classes.avatar}>
               {/* <LockOutlinedIcon /> */}
@@ -179,13 +182,15 @@ export default function SignUp() {
               label="I Agree to Terms and Conditions."
               className={classes.agree}
             />
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" className={classes.submit} variant="contained" disabled={isSubmitting}>
               Sign Up
             </button>
             <Link href="#" variant="body2">
               Already have an account? Sign in
             </Link>
           </form>
+          </div>
+              </Container>
         );
       }}
     </Formik>
@@ -197,97 +202,3 @@ export default function SignUp() {
 
 
 
-
-
-
-
-
-// import React, { Component } from "react";
-// import ReactDOM from "react-dom";
-// import "./main.css";
-
-// export class App extends Component {
-//   render() {
-//     return (
-     
-//   <div id="RegisterDiv">
-//   <div id="RegisterHead">Sign Up</div>
-//       <form class="needs-validation" novalidate>
-//           <div class="form-col">
-//             <div>
-//               <label for="validationCustom01">First name</label>
-//               <input type="text" class="form-control" placeholder="first name" id="validationCustom01" minlength="2" required />
-//               <div class="valid-feedback">
-//                 Looks good!
-//               </div>
-//               <div class="invalid-feedback">
-//                 Please provide a valid first name.
-//               </div>
-//             </div>
-//             <div>
-//               <label for="validationCustom02">Last name</label>
-//               <input type="text" class="form-control" placeholder="last name" id="validationCustom02" minlength="2" required />
-//               <div class="valid-feedback">
-//                 Looks good!
-//               </div>
-//               <div class="invalid-feedback">
-//                 Please provide a valid last name.
-//               </div>
-//             </div>
-//             <div>
-//               <label for="validationCustom04">Email</label>
-//               <input type="email" class="form-control" placeholder="email" id="validationCustom04" required />
-//               <div class="valid-feedback">
-//                 Looks good!
-//               </div>
-//               <div class="invalid-feedback">
-//                 Please provide a valid email.
-//                 </div>
-//               </div>
-//           </div>
-//           <div class="form-col">
-//             <div>
-//               <label for="validationCustom03">Password</label>
-//               <input type="password" class="form-control" placeholder="choose password" id="validationCustom03" minlength="8" required />
-//               <div class="invalid-feedback">
-//                 Please provide a valid password.
-//               </div>
-//                <div class="valid-feedback">
-//                  Looks good!
-//               </div>
-//             </div>
-//             <div>
-//               <label for="validationCustom05">Confirm Password</label>
-//               <input type="password" class="form-control" placeholder="confirm password" id="validationCustom05" minlength="8" required />
-//               <div class="invalid-feedback">
-//                 Please provide a valid password.
-//               </div>
-//                <div class="valid-feedback">
-//                  Looks good!
-//               </div>
-//             </div>
-//           </div>
-//               <div class="form-group">
-//                   <div class="form-check">
-//                     <p id="check">
-//                           <input type="checkbox" value="" id="invalidCheck" name="agree"class="form-check-input" required />
-//                       <label class="form-check-label" for="invalidCheck">I agree to terms and conditions</label>
-//                     </p>
-//                       <div class="invalid-feedback">
-//                         You must agree before submitting.
-//                       </div>
-//                   </div>
-//               </div>
-//               <div id="socialLinks" class="d-flex flex-row justify-content-around">
-//                 <a href="http://www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i>acebook</a>
-//                 <a href="http://www.gmail.com"><i class="fa fa-google" aria-hidden="true"></i>oogle</a>
-//               </div>
-//           <button class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" type="submit" >Sign Up</button>
-//         </form>
-//         </div>
-    
-//     );
-//   }
-// }
-
-// export default App;
