@@ -3,14 +3,10 @@ import Avatar from '@material-ui/core/Avatar';
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "./main.css";
-// import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
-// import Grid from '@material-ui/core/Grid';
-// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -28,12 +24,13 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid rgb(236, 203, 203)',
     padding:'0% !mportant',
     width:'30%',
-    height:'87vh',
+    // height:'auto',
     marginTop:'2.5%',
     borderRadius:' 4%',
   },
   avatar: {
     // margin: theme.spacing(0),
+    marginLeft:'45%',
     backgroundColor: theme.palette.secondary.main,
   },
   form: {
@@ -43,15 +40,15 @@ const useStyles = makeStyles((theme) => ({
     
   },
   agree: {    
-    fontSize:'xSmall',
-
+    fontSize:'11px',
+    fontWeight:'100',
   },
   submit: {
     width:'40%',
     // marginTop: '2%',
     padding:'1%',
-    marginBottom:'2%',
-    marginLeft:'25%',
+    // marginBottom:'0.5%',
+    marginLeft:'30%',
     fontSize:'12px',
   },
 }));
@@ -178,13 +175,25 @@ export default function SignUp() {
               <div className="input-feedback">{errors.password}</div>
             )}
             <FormControlLabel
-              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              control={<Checkbox value="allowExtraEmails" required color="primary" />}
               label="I Agree to Terms and Conditions."
               className={classes.agree}
             />
             <button type="submit" className={classes.submit} variant="contained" disabled={isSubmitting}>
               Sign Up
             </button>
+            <div className="social">
+              <div className="socialSpan">OR Sign Up With</div>
+              <div className="socials">
+                <a href="" className="socialf" >
+                <i class="fa fa-facebook-f" aria-hidden="true"></i>
+                  acebook</a>
+                OR
+                <a href="" className="socialg" >
+                <i class="fa fa-google" aria-hidden="true"></i>
+                  oogle</a>
+              </div>
+            </div>
             <Link href="#" variant="body2">
               Already have an account? Sign in
             </Link>
