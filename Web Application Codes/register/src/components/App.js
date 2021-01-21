@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   agree: {    
     fontSize:'11px',
+    display:'inlineFlex',
     fontWeight:'100',
   },
   submit: {
@@ -126,7 +127,7 @@ export default function SignUp() {
             <input
               name="FirstName"
               type="text"
-              placeholder="Enter your FirstName"
+              placeholder="Enter your First Name"
               value={values.FirstName}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -139,7 +140,7 @@ export default function SignUp() {
             <input
               name="LastName"
               type="text"
-              placeholder="Enter your LastName"
+              placeholder="Enter your Last Name"
               value={values.LastName}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -175,7 +176,7 @@ export default function SignUp() {
               <div className="input-feedback">{errors.password}</div>
             )}
             <FormControlLabel
-              control={<Checkbox value="allowExtraEmails" required color="primary" />}
+              control={<Checkbox className="terms" value="allowExtraEmails" required color="primary" />}
               label="I Agree to Terms and Conditions."
               className={classes.agree}
             />
@@ -195,7 +196,9 @@ export default function SignUp() {
               </div>
             </div>
             <Link href="#" variant="body2">
-              Already have an account? Sign in
+              <i className="signInAcc">
+                Already have an account? Sign in
+              </i>
             </Link>
           </form>
           </div>

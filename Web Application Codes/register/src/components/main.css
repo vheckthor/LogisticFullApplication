@@ -57,14 +57,14 @@
     background-color: 250ms;
     display: block;
     border-radius: 25px;
-  }
-  
-  button:hover {
+}
+
+button:hover {
+    background-color:rgba(226, 74, 74, .65);
     cursor: pointer;
-    background-color: white;
     border: 2px solid rgb(236, 203, 203);
     border-radius: 25px;
-    color: rgb(70, 153, 179);
+    color: rgb(255, 255, 255);
   }
 
 .social{
@@ -103,4 +103,8 @@ a{
 }
 .fa{
     /* margin-right: 1%; */
+}
+.signInAcc{
+    margin-left: 5%;
+    text-align: center;
 }
