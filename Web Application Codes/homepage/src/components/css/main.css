@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+}
+
+.topNav {
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    /* justify-content: center; */
+    /* text-align: center; */
+    background-color: #EF1D52;
+    display: inline-flex;
+}
+
+.topLogo svg {
+    background-color: azure;
+    padding: 1%;
+    border: #EF1D52 2px solid;
+    box-shadow:3px 4px 6px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    margin: 0%;
+    width: 10%;
+    line-height: 50px;
+    height: 7vh;
+    display: inline;
+
+}
+
+.topHeader {
+    line-height: 50px;
+    color: azure;
+    margin: 0;
+}
+
+.topLogo {
+    display: inline-flex;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.topList {
+    display: inline-flex;
+    list-style-type: none;
+    flex-wrap: nowrap;
+    margin-left: 40%;
+}
+.topList li {
+    display: inline-flex;
+    list-style-type: none;
+    margin-right: 25%;
+    color: azure;
+}
+.topList li a {
+    text-decoration: none;
+    color: azure;
+}
+
+a img{
+    color: azure;
+    width: 10%;   
+}
+
+.triangle {
+	width: 27%;
+	height: 52vh;
+    /* border- */
+    transform: rotate(10deg);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.bodyText{
+    display: inline-block;
+    margin-top: 20vh;
+    margin-left: 10%;
+}
+
+.bodyText h1{
+    font-size: 50px;
+    word-spacing: 10%;
+}
+
+.bodyImages Img:nth-child(1){
+    position: absolute;
+    top: 16vh;
+    left: 55%;
+    z-index: 1;
+}
+.bodyImages Img:nth-child(2){
+    position: absolute;
+    top: 29vh;
+    left: 48%;
+    width: 17%;
+	height: 31vh;
+    z-index: -1;
+}
+.bodyImages Img:nth-child(3){
+    position: absolute;
+    top: 14vh;
+    left: 68%;
+    width: 17%;
+    height: 31vh;
+    z-index: -1;
+}
+br{
+    margin: 0%;
+    padding: 0%;
+}

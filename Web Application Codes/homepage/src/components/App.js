@@ -1,8 +1,12 @@
+import Body from "./Body";
+import "./css/main.css";
+import Nav from "./css/Nav";
 
 function App() {
   return (
     <div className="App">
-      WELCOME TO APP .JS COMPONENT
+      <Nav />
+      <Body />
     </div>
   );
 }
