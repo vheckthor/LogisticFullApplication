@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function Nav() {
+export default function Footer() {
     return (
-        <div>
-                  <nav className="topNav">
-        <div className="topLogo">
+        <div className='footer'>
+                    <div className="topLogo">
           <svg class="Path_2076" viewBox="0 0.492 44.69 17.878">
             <path
               id="Path_2076"
@@ -42,22 +41,10 @@ export default function Nav() {
             ></path>
           </svg>
           <h3 className="topHeader">
-            <i class="far fa-car-side"></i>
-            Logistics
+            TRANSIS
           </h3>
         </div>
-        <ul className="topList">
-          <li>
-            <a href="#ride">Ride</a>
-          </li>
-          <li>
-            <a href="#drive">Drive</a>
-          </li>
-          <li>
-            <a href="#logistics">Logistics</a>
-          </li>
-        </ul>
-      </nav>
+        
         </div>
     )
 }
