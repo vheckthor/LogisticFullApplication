@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div className='footer'>
                     <div className="topLogo">
-          <svg class="Path_2076" viewBox="0 0.492 44.69 17.878">
+          <svg className="Path_2076" viewBox="0 0.492 44.69 17.878">
             <path
               id="Path_2076"
               d="M 0.6391686201095581 4.968416690826416 L 5.698694705963135 4.245887279510498 C 6.62128210067749 3.679137229919434 7.578700542449951 3.171795129776001 8.565767288208008 2.726577520370483

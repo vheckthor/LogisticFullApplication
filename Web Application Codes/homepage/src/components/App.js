@@ -1,16 +1,20 @@
-import Body from "./Body";
+import React, { Component } from 'react';
+// import ReactDom from 'react-dom'
+import Nav from './Nav';
+import Ride from './Ride';
+import Footer from './Footer';
 import "./css/main.css";
-import Footer from "./Footer";
-import Nav from "./Nav";
 
-function App() {
-  return (
-    <div className="App">
-      <Nav />
-      <Body />
-      <Footer/>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div>
+        <Nav />
+        <Ride />
+        <Footer/>
+      </div>
+    )
+  }
 }
 
-export default App;
+export default App
