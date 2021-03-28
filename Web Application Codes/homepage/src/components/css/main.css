@@ -90,26 +90,25 @@ a img {
 
 .bodyImages Img:nth-child(1) {
   position: absolute;
-  top: 16%;
-  left: 55%;
-  z-index: 1;
-  animation: imageAnimation 2s infinite 1s infinite;
-}
-.bodyImages Img:nth-child(2) {
-  position: absolute;
-  top: 29%;
-  left: 48%;
-  width: 17%;
-  height: 31%;
+  top: 27%;
+  width: 25%;
+  left:50%;
   z-index: -1;
+  animation: imageAnimation 2s infinite 1s infinite;
 }
 .bodyImages Img:nth-child(3) {
   position: absolute;
-  top: 14%;
+  top: 46%;
+  left: 71%;
+  width: 17%;
+  z-index: -1;
+}
+.bodyImages Img:nth-child(2) {
+  position: absolute;
+  top: 15%;
   left: 68%;
   width: 17%;
-  height: 31%;
-  z-index: -1;
+  z-index: -2;
 }
 br {
   margin: 0%;
@@ -164,7 +163,7 @@ transform: rotate(45deg);
 
 .color{
   background-color: #ef1d52;
-  margin-left: 45%;
+  margin-left: 43%;
   margin-top: 1%;
   justify-content: center;
   width: 4%;
@@ -174,4 +173,20 @@ transform: rotate(45deg);
   margin-left: 43%;
   font-size: large;
   font-weight: bolder;
+}
+
+.delivery-icons{
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+.delivery-icons img:nth-child(1){
+  width: 10%;
+  margin-left: 30%;
+  margin-right: 7%;
+  height: 12vh;
+}
+.delivery-icons img:nth-child(2){
+  width: 10%;
+  height: 12vh;
 }

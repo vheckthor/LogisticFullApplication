@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import ReactDom from 'react-dom'
 import Nav from './Nav';
-import Ride from './Ride';
+import Home from './Home';
 import Footer from './Footer';
 import "./css/main.css";
 
@@ -10,7 +10,7 @@ export class App extends Component {
     return (
       <div>
         <Nav />
-        <Ride />
+        <Home />
         <Footer/>
       </div>
     )

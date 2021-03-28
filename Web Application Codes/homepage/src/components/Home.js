@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Ride() {
+export default function Home() {
   return (
     <div>
       <div className="bodyText">
@@ -18,9 +18,9 @@ export default function Ride() {
         </a>
       </div>
       <div className="bodyImages">
-        <img src="ComponentTMP_4-image.jpg" className="triangle" alt="" />
-        <img src="ComponentTMP_3-image.jpg" className="triangle" alt="" />
-        <img src="ComponentTMP_2-image.jpg" className="triangle" alt="" />
+        <img src="content-blonde-sitting-on-back@2x.png" alt="" />
+        <img src="delivery-man-wearing-a-face-ma@2x.png" alt="" />
+        <img src="photo-of-person-driving-138664@2x.png" alt="" />
       </div>
       <div className="space2"></div>
       <div className="space">
@@ -31,6 +31,10 @@ export default function Ride() {
       <div className='color'></div>
       <div className='ourOffer'>
         what we offer
+      </div>
+      <div className='delivery-icons'>
+        <img src="Photos 28_03_2021 3_47_49 pm.png" alt="" />
+        <img src="images.png" alt="" />
       </div>
     </div>
   );
