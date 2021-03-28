@@ -145,8 +145,12 @@ export default function SignUp() {
               <div className="input-feedback">{errors.password}</div>
             )}
             <FormControlLabel
+
               control={<Checkbox className="terms" value="allowExtraEmails" required color="primary" />}
               label="I Agree to Terms and Conditions."
+
+              control={<Checkbox className="terms" value="allowExtraEmails" color="primary" />}
+              label="Remember Me"
               className={classes.agree}
             />
             <button type="submit" className={classes.submit} variant="contained" disabled={isSubmitting}>
