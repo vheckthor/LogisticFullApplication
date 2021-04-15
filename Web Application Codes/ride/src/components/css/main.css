@@ -76,9 +76,9 @@ a img {
 }
 
 .bodyDiv{
-  width: 70%;
-  margin: auto;
-  margin-top: 5%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 7%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -88,22 +88,40 @@ a img {
 }
 
 .formDiv{
-  height: 40vh;
+  height: 53vh;
   margin-left: 2%;
-  margin-right: 2%;
-  width: 40%;
+  margin-right: 0%;
+  width: 50%;
+  padding-top: 4%;
   background-color: white;
   text-align: center;
+}
+.formDiv h1{
+  margin-bottom: 5%;
 }
 .maps{
-  height: 40vh;
-  margin-left: 2%;
+  height: 53vh;
+  margin-left: .5%;
   margin-right: 2%;
-  width: 40%;
+  width: 50%;
   background-color: white;
   text-align: center;
 }
 
+.formDiv input{
+  width: 80%;
+  height: 40px;
+  background-color: rgba(247, 77, 128,.1);
+  padding: 2%;
+  border: none;
+  outline: none;
+}
+.submit{
+  margin-top: 10%;
+  background-color: rgb(247, 77, 128) !important;
+}
+.destination{
+  margin-top: 5px;
 
-
+}
 
