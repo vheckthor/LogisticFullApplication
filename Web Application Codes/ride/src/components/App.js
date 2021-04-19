@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import ReactDom from 'react-dom'
+
 import Nav from './Nav';
 // import Footer from './Footer';
 import "./css/main.css";
@@ -10,6 +11,7 @@ export class App extends Component {
     return (
       <div className='bodyjs'>
         <Nav />
+        
         <Body/>
         {/* <Footer/> */}
       </div>

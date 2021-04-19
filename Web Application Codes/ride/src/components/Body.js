@@ -1,4 +1,5 @@
 import React from 'react'
+import MapsPage from "../Screens/MapsPage";
 
 function Body() {
     return (
@@ -18,6 +19,7 @@ function Body() {
                     <input type='text' placeholder='enter you destination'/>
                 </form> */}
             </div>
+            <MapsPage />
         </div>
     )
 }
