@@ -22,6 +22,13 @@ class ResetPasswordController extends Controller
     use ResetsPasswords;
 
     /**
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/dashboard';
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -31,27 +38,19 @@ class ResetPasswordController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get the response for a successful password reset.
+        /**
+     * Display the password reset view for the given token.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  string  $response
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    protected function sendResetResponse(Request $request, $response)
-    {
-        return ['status' => trans($response)];
-    }
-
-    /**
-     * Get the response for a failed password reset.
+     * If no token is present, display the link request form.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  string  $response
-     * @return \Illuminate\Http\RedirectResponse
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string|null  $token
+     * @return \Illuminate\Http\Response
      */
-    protected function sendResetFailedResponse(Request $request, $response)
+    public function showResetForm(Request $request, $token = null)
     {
-        return response()->json(['email' => trans($response)], 400);
+        return view('user.auth.passwords.reset')->with(
+            ['token' => $token, 'email' => $request->email]
+        );
     }
 }

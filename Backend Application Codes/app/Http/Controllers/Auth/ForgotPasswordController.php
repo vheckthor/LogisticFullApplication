@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
-use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
@@ -32,26 +31,12 @@ class ForgotPasswordController extends Controller
     }
 
     /**
-     * Get the response for a successful password reset link.
+     * Display the form to request a password reset link.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  string  $response
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
-    protected function sendResetLinkResponse(Request $request, $response)
+    public function showLinkRequestForm()
     {
-        return ['status' => trans($response)];
-    }
-
-    /**
-     * Get the response for a failed password reset link.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  string  $response
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    protected function sendResetLinkFailedResponse(Request $request, $response)
-    {
-        return response()->json(['email' => trans($response)], 400);
+        return view('user.auth.passwords.email');
     }
 }

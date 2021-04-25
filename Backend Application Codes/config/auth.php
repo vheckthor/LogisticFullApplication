@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -46,7 +46,34 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+
+        'provider' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
+
+        'account' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
+
+        'admin' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
+
+        'fleet' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
+        
+        'dispatcher' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
     ],
+  
 
     /*
     |--------------------------------------------------------------------------
@@ -69,6 +96,7 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Entities\User::class,
+            'model'  => App\Models\User::class,
         ],
 
         // 'users' => [

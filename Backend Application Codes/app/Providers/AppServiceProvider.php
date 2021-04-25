@@ -3,9 +3,23 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Blade::directive('env', function ($environment) {
+            return app()->environment($environment);
+        });
+        //
+    }
+
     /**
      * Register any application services.
      *
@@ -14,15 +28,5 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-         \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 }
