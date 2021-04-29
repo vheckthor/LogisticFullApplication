@@ -76,14 +76,17 @@ a img {
 }
 
 .bodyDiv{
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 7%;
+  width: 43% !important;
+  margin-left: 7%;
+  margin-right: .5%;
+  /* margin-top: 2%; */
+  padding:4% 0 0 0px !important;
   align-items: center;
+  background-color: #fff;
   justify-content: center;
   text-align: center;
   align-items: center;
-  display: inline-flex;
+  display: inline-block;
   justify-content: center;
 }
 
@@ -96,19 +99,14 @@ a img {
   background-color: white;
   text-align: center;
 }
-.formDiv h1{
+.bodyDiv h1{
+  font-family: sans-serif;
+  color: rgba(0, 0, 0,.6);
   margin-bottom: 5%;
 }
-.maps{
-  height: 53vh;
-  margin-left: .5%;
-  margin-right: 2%;
-  width: 50%;
-  background-color: white;
-  text-align: center;
-}
 
-.formDiv input{
+/* .formDiv input, */
+.color-white {
   width: 80%;
   height: 40px;
   background-color: rgba(247, 77, 128,.1);
@@ -117,7 +115,14 @@ a img {
   outline: none;
 }
 .submit{
-  margin-top: 10%;
+  width: 80%;
+  padding: 2%;
+  outline: none;
+  border: none;
+  font-size: 1.2em;
+  font-weight: 100;
+  margin-top: 8%;
+  color: #fff;
   background-color: rgb(247, 77, 128) !important;
 }
 .destination{

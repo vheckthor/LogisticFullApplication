@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
-import AutoComplete from "../Components/AutoComplete.jsx";
-import Marker from "../Components/Marker";
-import "../Components/Sidenav/sidenav.css";
+import AutoComplete from "../components/AutoComplete"
+import Marker from "../components/Marker";
+import "../components/Sidenav/sidenav.css";
 import Pin from "../icons/location-pin.svg";
-import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
+// import { Icon } from '@iconify/react'
+// import locationIcon from '@iconify/icons-mdi/map-marker'
 // import {
 //   GoogleMapProvider,
 //   HeatMap,
@@ -21,7 +21,7 @@ const MapsPage = () => {
   const [lat, setLat] = useState(9.082);
   const [lng, setLng] = useState(8.6753);
   const [zoom, setZoom] = useState(2);
-  const [google, setGoogle] = useState();
+  // const [google, setGoogle] = useState();
   const [mapApiLoaded, setMapApiLoaded] = useState(false);
   const [mapApi, setMapApi] = useState();
   const [mapInstance, setMapInstance] = useState();
@@ -49,7 +49,7 @@ const MapsPage = () => {
     setMapApiLoaded(true);
     
   };
-  const [stateInfo, setStateInfo] = useState([]);
+  // const [stateInfo, setStateInfo] = useState([]);
   
   
 
@@ -65,72 +65,86 @@ const MapsPage = () => {
         
       <div
         style={{
-          display: "flex",
-          height: "100vh",
+          display: "inlineFlex",
+          height: "60vh",
+          paddingTop: "7%",
         }}
-      >
+        >
         <div
           style={{
-            flex:0.95,
+            // flex:0.95,
             font: "1.4rem",
             margin:"0 auto",
+            display: "flex",
             
           }}
         >  
-          
-            <h3 className="text-center text-capitalize">Parcel request</h3>
+          <div className="bodyDiv">
+
+              <h1 className="text-center text-capitalize">Select Ride Type</h1>
+              {mapApiLoaded && (
+              <div className="mb-4">
+                
+                <AutoComplete
+                  map={mapInstance}
+                  mapApi={mapApi}
+                  addplace={async (place) => {
+                    setPlaces([...places, place]);
+                    const { address_components } = place;
+                    
+                    const { short_name } = address_components[
+                      address_components.length - 2
+                    ];
+                    
+                    console.log(short_name)
+                    const res = await fetch(
+                      `https://pvc-api.osinachi.me/api/states/${short_name}`
+                    );
+                    const data = await res.json();
+                    console.log(data);
+                  }}
+                  searchfield={"Pickup address"}
+                />
+              </div>
+            )}
+            <br/>
+
             {mapApiLoaded && (
-            <div className="mb-4">
-              
-              <AutoComplete
-                map={mapInstance}
-                mapApi={mapApi}
-                addplace={async (place) => {
-                  setPlaces([...places, place]);
-                  const { address_components } = place;
-                  
-                  const { short_name } = address_components[
-                    address_components.length - 2
-                  ];
-                  
-                  console.log(short_name)
-                  const res = await fetch(
-                    `https://pvc-api.osinachi.me/api/states/${short_name}`
-                  );
-                  const data = await res.json();
-                  console.log(data);
-                }}
-                searchfield={"Pickup address"}
-              />
+              <div className="mb-4">
+                <AutoComplete
+                  map={mapInstance}
+                  mapApi={mapApi}
+                  addplace={async (place) => {
+                    setPlaces([...places, place]);
+                    const { address_components } = place;
+                    const { short_name } = address_components[
+                      address_components.length - 2
+                    ];
+                    console.log(short_name);
+                    const res = await fetch(
+                      `https://pvc-api.osinachi.me/api/states/${short_name}`
+                    );
+                    const data = await res.json();
+                    console.log(data);
+                  }}
+                  searchfield={"Dropoff address"}
+                /> 
+
+              </div> 
+            
+            )}
+            <div>
+              <input type='submit' value='order now' className='submit'/>
             </div>
-          )}
+          </div>
 
-          {mapApiLoaded && (
-            <div className="mb-4">
-               <AutoComplete
-                map={mapInstance}
-                mapApi={mapApi}
-                addplace={async (place) => {
-                  setPlaces([...places, place]);
-                  const { address_components } = place;
-                  const { short_name } = address_components[
-                    address_components.length - 2
-                  ];
-                  console.log(short_name);
-                  const res = await fetch(
-                    `https://pvc-api.osinachi.me/api/states/${short_name}`
-                  );
-                  const data = await res.json();
-                  console.log(data);
-                }}
-                searchfield={"Dropoff address"}
-              /> 
-
-             </div> 
-          )}
-
-           
-          
+          <div 
+                  style={{
+                    display: "flex",
+                    height: "60vh",
+                    width: "43%"
+                  }}
+          >
           <GoogleMapReact
             onClick={handleClick}
             bootstrapURLKeys={{
@@ -143,6 +157,7 @@ const MapsPage = () => {
             zoom={zoom}
             yesIWantToUseGoogleMapApiInternals
             onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+            className="bodyDiv"
           >
           
           {
@@ -174,6 +189,9 @@ const MapsPage = () => {
                 />
               ))}      */}
           </GoogleMapReact>
+          </div> 
+          
+          
         </div>
       </div>
     </>

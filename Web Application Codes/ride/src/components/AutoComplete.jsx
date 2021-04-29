@@ -57,17 +57,17 @@ class AutoComplete extends Component {
 
   render() {
     return (
-      // <Wrapper>
-        <input
-          ref={(ref) => {
-            this.searchInput = ref;
-          }}
-          type="text"
-          onFocus={this.clearSearchBox}
-          className="form-control color-white"
-          placeholder={this.props.searchfield}
-        />
-     //</Wrapper>
+            // <Wrapper>
+            <input
+              ref={(ref) => {
+                this.searchInput = ref;
+              }}
+              type="text"
+              onFocus={this.clearSearchBox}
+              className="form-control color-white"
+              placeholder={this.props.searchfield}
+            />
+        //  </Wrapper>
     );
   }
 }
