@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+@material-ui
+/node_modules/@material-ui
 /.pnp
 .pnp.js
 
