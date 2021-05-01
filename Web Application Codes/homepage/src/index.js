@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Ride from './components/Ride';
 
 class LoginControl extends React.Component {
 
@@ -10,7 +10,7 @@ class LoginControl extends React.Component {
       console.log('your location is accessible')
       if (navigator.onLine) {
         console.log ("youre online")
-        button = <App/>
+        button = <Ride/>
       } else{
         console.log ("youre offline")
          button = <div>You need to be connected!!! </div>
