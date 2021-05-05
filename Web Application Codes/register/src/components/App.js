@@ -186,11 +186,11 @@ export default function SignUp() {
             <div className="social">
               <div className="socialSpan">OR Sign Up With</div>
               <div className="socials">
-                <a href="" className="socialf" >
+                <a href="#socialf" className="socialf" >
                 <i class="fa fa-facebook-f" aria-hidden="true"></i>
                   acebook</a>
                 OR
-                <a href="" className="socialg" >
+                <a href="#socialg" className="socialg" >
                 <i class="fa fa-google" aria-hidden="true"></i>
                   oogle</a>
               </div>

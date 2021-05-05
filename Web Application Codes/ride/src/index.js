@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import Ride from './components/Ride';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Ride />
   </React.StrictMode>,
   document.getElementById('root')
 );

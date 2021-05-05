@@ -11,7 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(2),
@@ -105,9 +104,9 @@ export default function SignUp() {
           handleBlur,
           handleSubmit,
         } = props;
-  
+        
         return (
-            <Container className={classes.pap}>
+          <Container className={classes.pap}>
                 <div className={classes.paper}>
                 <CssBaseline />
           <form onSubmit={handleSubmit} className={classes.form}>
@@ -127,10 +126,10 @@ export default function SignUp() {
               onChange={handleChange}
               onBlur={handleBlur}
               className={errors.email && touched.email && "error"}
-            />
+              />
             {errors.email && touched.email && (
               <div className="input-feedback">{errors.email}</div>
-            )}
+              )}
             <label htmlFor="email">Password</label>
             <input
               name="password"
@@ -146,13 +145,13 @@ export default function SignUp() {
             )}
             <FormControlLabel
 
-              control={<Checkbox className="terms" value="allowExtraEmails" required color="primary" />}
-              label="I Agree to Terms and Conditions."
+control={<Checkbox className="terms" value="allowExtraEmails" required color="primary" />}
+label="I Agree to Terms and Conditions."
 
-              control={<Checkbox className="terms" value="allowExtraEmails" color="primary" />}
-              label="Remember Me"
-              className={classes.agree}
-            />
+control={<Checkbox className="terms" value="allowExtraEmails" color="primary" />}
+label="Remember Me"
+className={classes.agree}
+/>
             <button type="submit" className={classes.submit} variant="contained" disabled={isSubmitting}>
               Sign In
             </button>

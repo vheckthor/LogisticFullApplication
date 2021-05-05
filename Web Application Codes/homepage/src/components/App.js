@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Home from "./Home";
 import {
-  ReactRouter as Router,
+  BrowserRouter as Router,
   Route,
   NavLink,
   Switch,
 } from "react-router-dom";
 import Footer from "./Footer";
 import "./css/main.css";
-import Ride from "../../../ride/src/components/Ride";
+// import Ride from "../../../ride/src/components/Ride";
 
 export class App extends Component {
   render() {
@@ -58,9 +58,9 @@ export class App extends Component {
             <ul className="topList">
               <li>
                 <a href="#ride">
-                  <NavLink activeClassName="active" to="/Ride">
+                  {/* <NavLink activeClassName="active" to="/Ride"> */}
                     Ride
-                  </NavLink>
+                  {/* </NavLink> */}
                 </a>
               </li>
               <li>
@@ -87,9 +87,9 @@ export class App extends Component {
           </NavLink>
           <Footer />
         </div>
-
+{/*  */}
         <Switch>
-          <Route path="/Ride" component={Ride} />
+          {/* <Route path="/Ride" component={Ride} /> */}
           <Route path="/Home" component={Home} />
         </Switch>
       </Router>
