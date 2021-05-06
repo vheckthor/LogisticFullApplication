@@ -1,8 +1,8 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
-import { Formik } from "formik";
-import * as Yup from "yup";
-import "./main.css";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+import './main.css';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -11,179 +11,187 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-
 const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(2),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  pap: {
-    boxShadow:'3px 5px 2px rgba(112, 128, 144, .5)',
-    border: '2px solid rgb(236, 203, 203)',
-    padding:'0% !mportant',
-    width:'30%',
-    // height:'auto',
-    marginTop:'2.5%',
-    borderRadius:' 4%',
-  },
-  avatar: {
-    // margin: theme.spacing(0),
-    marginLeft:'45%',
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    padding:'0%',
-    marginTop: theme.spacing(0),
-    
-  },
-  agree: {    
-    fontSize:'11px',
-    display:'inlineFlex',
-    fontWeight:'100',
-  },
-  submit: {
-    width:'40%',
-    // marginTop: '2%',
-    padding:'1%',
-    // marginBottom:'0.5%',
-    marginLeft:'30%',
-    fontSize:'12px',
-  },
+	paper: {
+		marginTop: theme.spacing(2),
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+	},
+	pap: {
+		boxShadow: '3px 5px 2px rgba(112, 128, 144, .5)',
+		border: '2px solid rgb(236, 203, 203)',
+		padding: '0% !mportant',
+		width: '30%',
+		// height:'auto',
+		marginTop: '2.5%',
+		borderRadius: ' 4%',
+	},
+	avatar: {
+		// margin: theme.spacing(0),
+		marginLeft: '45%',
+		backgroundColor: theme.palette.secondary.main,
+	},
+	form: {
+		width: '100%', // Fix IE 11 issue.
+		padding: '0%',
+		marginTop: theme.spacing(0),
+	},
+	agree: {
+		fontSize: '11px',
+		display: 'inlineFlex',
+		fontWeight: '100',
+	},
+	submit: {
+		width: '40%',
+		// marginTop: '2%',
+		padding: '1%',
+		// marginBottom:'0.5%',
+		marginLeft: '30%',
+		fontSize: '12px',
+	},
 }));
 
 export default function SignUp() {
-  const classes = useStyles();
-    return(
-      <Formik
-      initialValues={{email: "", password: "" }}
-      onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          console.log("Logging in", values);
-          setSubmitting(false);
-        }, 500);
-      }}
-      //********Handling validation messages yourself*******/
-      // validate={values => {
-      //   let errors = {};
-      //   if (!values.email) {
-      //     errors.email = "Required";
-      //   } else if (!EmailValidator.validate(values.email)) {
-      //     errors.email = "Invalid email address";
-      //   }
-  
-      //   const passwordRegex = /(?=.*[0-9])/;
-      //   if (!values.password) {
-      //     errors.password = "Required";
-      //   } else if (values.password.length < 8) {
-      //     errors.password = "Password must be 8 characters long.";
-      //   } else if (!passwordRegex.test(values.password)) {
-      //     errors.password = "Invalida password. Must contain one number";
-      //   }
-  
-      //   return errors;
-      // }}
-      //********Using Yum for validation********/
-  
-      validationSchema={Yup.object().shape({
-        email: Yup.string().email().required("Required"),
-        password: Yup.string()
-          .required("No password provided.")
-          .min(8, "Password is too short - should be 8 chars minimum.")
-          .matches(/(?=.*[0-9])/, "Password must contain a number."),
-      })}
-    >
-      {(props) => {
-        const {
-          values,
-          touched,
-          errors,
-          isSubmitting,
-          handleChange,
-          handleBlur,
-          handleSubmit,
-        } = props;
-  
-        return (
-            <Container className={classes.pap}>
-                <div className={classes.paper}>
-                <CssBaseline />
-          <form onSubmit={handleSubmit} className={classes.form}>
-            <Avatar className={classes.avatar}>
-              {/* <LockOutlinedIcon /> */}
-            </Avatar>
-            <Typography component="h1" variant="h5">
-              Sign up
-            </Typography>
-            
-            <label htmlFor="email">Email</label>
-            <input
-              name="email"
-              type="text"
-              placeholder="Enter your email"
-              value={values.email}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={errors.email && touched.email && "error"}
-            />
-            {errors.email && touched.email && (
-              <div className="input-feedback">{errors.email}</div>
-            )}
-            <label htmlFor="email">Password</label>
-            <input
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              className={errors.password && touched.password && "error"}
-            />
-            {errors.password && touched.password && (
-              <div className="input-feedback">{errors.password}</div>
-            )}
-            <FormControlLabel
+	const classes = useStyles();
+	return (
+		<Formik
+			initialValues={{ email: '', password: '' }}
+			onSubmit={(values, { setSubmitting }) => {
+				setTimeout(() => {
+					console.log('Logging in', values);
+					setSubmitting(false);
+				}, 500);
+			}}
+			//********Handling validation messages yourself*******/
+			// validate={values => {
+			//   let errors = {};
+			//   if (!values.email) {
+			//     errors.email = "Required";
+			//   } else if (!EmailValidator.validate(values.email)) {
+			//     errors.email = "Invalid email address";
+			//   }
 
-              control={<Checkbox className="terms" value="allowExtraEmails" required color="primary" />}
-              label="I Agree to Terms and Conditions."
+			//   const passwordRegex = /(?=.*[0-9])/;
+			//   if (!values.password) {
+			//     errors.password = "Required";
+			//   } else if (values.password.length < 8) {
+			//     errors.password = "Password must be 8 characters long.";
+			//   } else if (!passwordRegex.test(values.password)) {
+			//     errors.password = "Invalida password. Must contain one number";
+			//   }
 
-              control={<Checkbox className="terms" value="allowExtraEmails" color="primary" />}
-              label="Remember Me"
-              className={classes.agree}
-            />
-            <button type="submit" className={classes.submit} variant="contained" disabled={isSubmitting}>
-              Sign In
-            </button>
-            <div className="social">
-              <div className="socialSpan">OR Sign In With</div>
-              <div className="socials">
-                <a href="" className="socialf" >
-                <i class="fa fa-facebook-f" aria-hidden="true"></i>
-                  acebook</a>
-                OR
-                <a href="" className="socialg" >
-                <i class="fa fa-google" aria-hidden="true"></i>
-                  oogle</a>
-              </div>
-            </div>
-            <Link href="#" variant="body2">
-              <i className="signInAcc">
-                Don't have an account? Sign Up
-              </i>
-            </Link>
-          </form>
-          </div>
-              </Container>
-        );
-      }}
-    </Formik>
-  
-    )
+			//   return errors;
+			// }}
+			//********Using Yum for validation********/
+
+			validationSchema={Yup.object().shape({
+				email: Yup.string().email().required('Required'),
+				password: Yup.string()
+					.required('No password provided.')
+					.min(8, 'Password is too short - should be 8 chars minimum.')
+					.matches(/(?=.*[0-9])/, 'Password must contain a number.'),
+			})}
+		>
+			{(props) => {
+				const {
+					values,
+					touched,
+					errors,
+					isSubmitting,
+					handleChange,
+					handleBlur,
+					handleSubmit,
+				} = props;
+
+				return (
+					<Container className={classes.pap}>
+						<div className={classes.paper}>
+							<CssBaseline />
+							<form onSubmit={handleSubmit} className={classes.form}>
+								<Avatar className={classes.avatar}>
+									{/* <LockOutlinedIcon /> */}
+								</Avatar>
+								<Typography component='h1' variant='h5'>
+									Sign up
+								</Typography>
+
+								<label htmlFor='email'>Email</label>
+								<input
+									name='email'
+									type='text'
+									placeholder='Enter your email'
+									value={values.email}
+									onChange={handleChange}
+									onBlur={handleBlur}
+									className={errors.email && touched.email && 'error'}
+								/>
+								{errors.email && touched.email && (
+									<div className='input-feedback'>{errors.email}</div>
+								)}
+								<label htmlFor='email'>Password</label>
+								<input
+									name='password'
+									type='password'
+									placeholder='Enter your password'
+									value={values.password}
+									onChange={handleChange}
+									onBlur={handleBlur}
+									className={errors.password && touched.password && 'error'}
+								/>
+								{errors.password && touched.password && (
+									<div className='input-feedback'>{errors.password}</div>
+								)}
+								<FormControlLabel
+									control={
+										<Checkbox
+											className='terms'
+											value='allowExtraEmails'
+											required
+											color='primary'
+										/>
+									}
+									label='I Agree to Terms and Conditions.'
+									control={
+										<Checkbox
+											className='terms'
+											value='allowExtraEmails'
+											color='primary'
+										/>
+									}
+									label='Remember Me'
+									className={classes.agree}
+								/>
+								<button
+									type='submit'
+									className={classes.submit}
+									variant='contained'
+									disabled={isSubmitting}
+								>
+									Sign In
+								</button>
+								<div className='social'>
+									<div className='socialSpan'>OR Sign In With</div>
+									<div className='socials'>
+										<a href='' className='socialf'>
+											<i class='fa fa-facebook-f' aria-hidden='true'></i>
+											acebook
+										</a>
+										OR
+										<a href='' className='socialg'>
+											<i class='fa fa-google' aria-hidden='true'></i>
+											oogle
+										</a>
+									</div>
+								</div>
+								<Link href='#' variant='body2'>
+									<i className='signInAcc'>Don't have an account? Sign Up</i>
+								</Link>
+							</form>
+						</div>
+					</Container>
+				);
+			}}
+		</Formik>
+	);
 }
-
-
-
-
-
