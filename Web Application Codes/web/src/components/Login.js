@@ -114,7 +114,7 @@ export default function LogIn() {
 									{/* <LockOutlinedIcon /> */}
 								</Avatar>
 								<Typography component='h1' variant='h5'>
-									Sign up
+									Sign In
 								</Typography>
 
 								<label htmlFor='email'>Email</label>

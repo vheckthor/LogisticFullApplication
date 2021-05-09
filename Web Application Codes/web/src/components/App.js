@@ -5,6 +5,7 @@ import Home from './Home';
 import SignUp from './SignUp';
 import Footer from './Footer';
 import LogIn from './Login';
+import Trial from './Trial';
 import '../css/index.css';
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
 					<Link to='/register'>
 						<button>Register</button>
 					</Link>
+				</Route>
+				<Route exact path='/map'>
+					<Trial />
 				</Route>
 				<Route>
 					<h1>Nothing is here</h1>
