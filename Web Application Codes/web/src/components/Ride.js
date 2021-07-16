@@ -19,7 +19,7 @@ function Ride() {
                     <input type='text' placeholder='enter you destination'/>
                 </form> */}
 			{/* </div> */}
-			<MapsPage />
+			{/* <MapsPage /> */}
 		</div>
 	);
 }
