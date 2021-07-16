@@ -1,11 +1,14 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Nav from './Nav';
 import Home from './Home';
 import SignUp from './SignUp';
 import Footer from './Footer';
 import LogIn from './Login';
-import Trial from './Trial';
+import Ride from './Ride';
+import GetMoving from './GetMoving';
+import Verification from './Verification';
+// import Trial from './Trial';
 import '../css/index.css';
 
 function App() {
@@ -17,23 +20,26 @@ function App() {
 					<Home />
 					<Footer />
 				</Route>
-				<Route exact path='/register'>
+				<Route path='/register'>
 					<SignUp />
 				</Route>
-				<Route exact path='/login'>
+				<Route path='/login'>
 					<LogIn />
 				</Route>
-				<Route exact path='/ride'>
-					<h1>Rides Components go here</h1>
-					<Link to='/'>
-						<button>Home</button>
-					</Link>
-					<Link to='/register'>
-						<button>Register</button>
-					</Link>
+				<Route path='/ride'>
+					<Nav />
+					<Ride />
+					<Footer />
 				</Route>
-				<Route exact path='/map'>
-					<Trial />
+				<Route path='/map'>{/* <Trial /> */}</Route>
+				<Route path='/try'>
+					<div className='blur'>
+						<div className='signup-page'>
+							<Nav />
+							<GetMoving />
+						</div>
+					</div>
+					{/* <Verification /> */}
 				</Route>
 				<Route>
 					<h1>Nothing is here</h1>
