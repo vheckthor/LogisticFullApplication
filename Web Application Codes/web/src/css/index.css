@@ -185,16 +185,4 @@ br {
 	width: 10%;
 	height: 12vh;
 }
-.blur {
-	background: url(./action-adult-blur-car-620335_i.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100vh;
-	width: 100vw;
-  overflow: hidden;
-}
-.signup-page {
-  height: inherit;
-  background-color: #000000;
-  opacity: 0.8;
-}
+

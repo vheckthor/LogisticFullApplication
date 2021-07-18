@@ -1,129 +1,19 @@
 import React from 'react';
-import { Form, Formik } from 'formik';
-import * as Yup from 'yup';
-import '../css/main.css';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Nav from './Nav';
+import '../css/welcome.css';
 
-const useStyles = makeStyles((theme) => ({
-	paper: {
-		marginTop: theme.spacing(5),
-		display: 'flex',
-		flexDirection: 'column',
-		alignItems: 'center',
-	},
-	pap: {
-		border: '2px solid #eaeaea',
-		width: '30%',
-		height: '48vh',
-		marginTop: '2.5%',
-		borderRadius: ' 4%',
-		backgroundColor: '#fafafa',
-	},
-	form: {
-		width: '100%', // Fix IE 11 issue.
-		padding: '3% 0% 0% 0%',
-		marginTop: theme.spacing(0),
-	},
-	heading: {
-		fontWeight: 'bold',
-		marginBottom: '4%',
-	},
-	textField: {
-		width: '100%',
-		marginBottom: '5%',
-		border: '2px solid gray',
-		borderRadius: '5px',
-		padding: '3%',
-		'&::placeholder': {
-			fontSize: '15px',
-		},
-		fontSize: '15px',
-	},
-	submit: {
-		width: '100%',
-		// marginTop: '2%',
-		padding: '3%',
-		// borderRadius: '0',
-		marginBottom: '3%',
-		// marginLeft: '30%',
-		fontSize: '115%',
-		fontWeight: '550',
-		position: 'relative',
-		textTransform: 'none',
-		// transition: 'none',
-		'&:hover': {
-			marginBottom: '2%',
-			marginTop: '0',
-			borderRadius: '7px',
-		},
-	},
-	last: {
-		// marginBottom: '15%',
-		color: '#f50057',
-		'&:hover': {
-			// marginBottom: '15%',
-		    color: '#f50057',
-		},
-	},
-	text: {
-		marginBottom: '3%',
-		marginTop: '3%',
-		fontSize: '130%',
-	},
-	logo: {
-		border: '2px solid #f50057',
-        width: '15%',
-        padding: '2%',
-        borderRadius: '10px'
-	},
-}));
-
-export default function Verification() {
-	const classes = useStyles();
-	let phoneNumber = '+2348 60237007';
-
+function Welcome() {
 	return (
-		<Formik
-			initialValues={{ otp: '' }}
-			onSubmit={(values, { setSubmitting }) => {
-				setTimeout(() => {
-					console.log('Logging in', values);
-					setSubmitting(false);
-				}, 500);
-			}}
-
-			validationSchema={Yup.object().shape({
-				otp: Yup.string()
-					.required('Required')
-					.matches(/^[0-9]+$/, 'Must be only digit')
-					.min(4, 'Must be exactly 4 digits')
-					.max(4, 'Must be exactly 4 digits'),
-			})}
-		>
-			{(props) => {
-				const {
-					values,
-					touched,
-					errors,
-					isSubmitting,
-					handleChange,
-					handleBlur,
-					handleSubmit,
-				} = props;
-
-				return (
-					<Container className={classes.pap}>
-						<div className={classes.paper}>
-							<CssBaseline />
-							<div className={classes.logo}>
-								<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
-									<path
-										id='Path_2076'
-										d='M 0.6391686201095581 4.968416690826416 L 5.698694705963135 4.245887279510498 C 6.62128210067749 3.679137229919434 7.578700542449951 3.171795129776001 8.565767288208008 2.726577520370483
+		<div className='signup-page-background'>
+			<div className='signup-page-foreground'>
+				<Nav />
+				<div className='welcome'>
+					<div className='topLogo'>
+						<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
+							<path
+								id='Path_2076'
+								d='M 0.6391686201095581 4.968416690826416 L 5.698694705963135 4.245887279510498 C 6.62128210067749 3.679137229919434 7.578700542449951 3.171795129776001 8.565767288208008 2.726577520370483
               C 11.82566070556641 1.249995231628418 15.3637809753418 0.4880675673484802 18.94271659851074 0.4920076727867126 L 19.82169723510742 0.4920076727867126 C 24.0452995300293 0.4950383305549622
              28.20132255554199 1.55488908290863 31.9109935760498 3.574883222579956 L 34.46437454223633 4.967812061309814 C 37.45331192016602 5.001453399658203 40.38463973999023 5.796418190002441 42.98138427734375 
              7.276631832122803 C 44.03668212890625 7.881872653961182 44.68828964233398 9.004769325256348 44.69011306762695 10.22102355957031 L 44.69011306762695 14.6437931060791 C 44.69011306762695 15.05531597137451
@@ -153,54 +43,16 @@ export default function Verification() {
                11.94818782806396 C 4.950989246368408 11.88487720489502 4.98163366317749 11.81551456451416 5.016473770141602 11.75150489807129 C 5.051621437072754 11.68757438659668 5.0910325050354 11.63302898406982 5.12470531463623 11.57359886169434 C 
                5.157993793487549 11.51393413543701 5.198955535888672 11.44604301452637 5.241396427154541 11.38513946533203 C 5.284068584442139 11.3239221572876 5.323483467102051 11.27566337585449 5.364449501037598 11.22057723999023 C 5.405337333679199 
                11.16541194915771 5.451733112335205 11.10055065155029 5.499295234680176 11.04321193695068 C 5.546856880187988 10.98595428466797 5.591392993927002 10.9411096572876 5.63778829574585 10.89416885375977 C 5.683873176574707 10.84746074676514 5.735394954681396 10.78415012359619 5.786601066589355 10.73201084136963 C 5.838118553161621 10.67987251281738 5.888706207275391 10.63867378234863 5.939987182617188 10.59258556365967 C 5.991508007049561 10.54650020599365 6.046670913696289 10.49195575714111 6.103309631347656 10.4434642791748 C 6.159716606140137 10.39528274536133 6.217285633087158 10.35796451568604 6.273613452911377 10.31552410125732 C 6.33032751083374 10.27316093444824 6.386967182159424 10.22769546508789 6.446399211883545 10.1879711151123 C 6.506065368652344 10.14855670928955 6.573097705841064 10.11371994018555 6.63702917098999 10.07190132141113 C 6.701272487640381 10.0300817489624 6.75341272354126 9.997340202331543 6.813696384429932 9.96552848815918 C 6.874058246612549 9.933406829833984 6.949164867401123 9.899734497070313 7.017673969268799 9.866992950439453 C 7.086180210113525 9.834251403808594 7.139792919158936 9.805155754089355 7.203181743621826 9.778542518615723 C 7.266495227813721 9.751543045043945 7.352304935455322 9.723380088806152 7.426555156707764 9.696689605712891 C 7.501117706298828 9.669689178466797 7.54960823059082 9.648818969726563 7.612918853759766 9.628801345825195 C 7.697799205780029 9.602730751037598 7.784775257110596 9.583956718444824 7.871439933776855 9.562386512756348 C 7.928153991699219 9.549118995666504 7.982385635375977 9.531195640563965 8.039650917053223 9.519404411315918 C 8.13120174407959 9.500627517700195 8.225159645080566 9.49030876159668 8.31818675994873 9.476653099060059 C 8.373353004455566 9.469359397888184 8.426111221313477 9.457257270812988 8.481198310852051 9.45213508605957 C 8.630322456359863 9.437238693237305 8.779133796691895 9.429092407226563 8.935544967651367 9.429092407226563 C 11.4028902053833 9.431497573852539 13.40222835540771 11.43083763122559 13.40471267700195 13.89818096160889 L 19.36556243896484 13.89818096160889 L 13.40471267700195 13.89911365509033 L 8.565767288208008 9.429092407226563 C 8.368151664733887 9.429092407226563 8.705190658569336 8.825052261352539 8.565767288208008 8.685342788696289 L 7.871439933776855 8.685342788696289 C 7.060729026794434 9.071159362792969 6.446399211883545 8.887520790100098 6.446399211883545 8.887520790100098 C 6.446399211883545 8.887520790100098 5.602019309997559 8.670483589172363 5.499295234680176 8.685342788696289 L 3.724183082580566 8.685342788696289 L 1.489601135253906 7.195405960083008 Z M 1.489601135253906 7.195405960083008'
-										fill='#EF1D52'
-									></path>
-								</svg>
-							</div>
-							<Form className={classes.form}>
-								<Typography
-									// component='h1'
-									variant='h5'
-									className={classes.text}
-								>
-									Enter 4 digit sent to you at <b>{phoneNumber}</b>
-								</Typography>
-
-								<input
-									id='otp'
-									name='otp'
-									type='number'
-									placeholder='0000'
-									value={values.otp}
-									onChange={handleChange}
-									onBlur={handleBlur}
-									className={`${classes.textField} ${
-										errors.otp && touched.otp && 'error'
-									}`}
-								/>
-
-								<Button
-									className={classes.submit}
-									color='secondary'
-									variant='contained'
-									disabled={isSubmitting}
-									type='submit'
-								>
-									Next
-								</Button>
-								<Button
-									className={`${classes.submit} ${classes.last}`}
-									// color='primary'
-									variant='standard'
-									// disabled={isSubmitting}
-								>
-									Resend Code
-								</Button>
-							</Form>
-						</div>
-					</Container>
-				);
-			}}
-		</Formik>
+								fill='#EF1D52'
+							></path>
+						</svg>
+					</div>
+					<h4 className='welcomeWord'>WELCOME TO TRANSIS RIDES</h4>
+					<Link to='/order'>Order My Ride</Link>
+				</div>
+			</div>
+		</div>
 	);
 }
+
+export default Welcome;

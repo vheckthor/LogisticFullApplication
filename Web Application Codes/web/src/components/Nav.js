@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 export default function Nav() {
 	return (
 		<div>
-			<nav className='topNav'>
-				<div className='topLogo'>
+			<nav id='signup-top-nav'>
+				<div className='topLogo' id='signup-top-logo'>
 					<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
 						<path
 							id='Path_2076'
@@ -44,14 +44,14 @@ export default function Nav() {
 					</svg>
 					<h3 className='topHeader'>TRANSIS</h3>
 				</div>
-				<ul className='topList'>
-					<li>
+				<ul id='signup-top-list'>
+					<li id="signup-top-list-element-1">
 						<Link to='/ride'>Ride</Link>
 					</li>
-					<li>
+					<li id="signup-top-list-element-2">
 						<Link to='/drive'>Drive</Link>
 					</li>
-					<li>
+					<li id="signup-top-list-element-3">
 						<Link to='/logistics'>Logistics</Link>
 					</li>
 				</ul>
