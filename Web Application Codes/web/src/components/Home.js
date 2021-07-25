@@ -1,8 +1,12 @@
 import React from 'react';
+import Nav from './Nav';
+import Footer from './Footer';
+import '../css/index.css';
 
 export default function Home() {
 	return (
 		<div>
+			<Nav />
 			<div className='bodyText'>
 				<h1>
 					Swift, easy, <br />
@@ -18,18 +22,9 @@ export default function Home() {
 				</a>
 			</div>
 			<div className='bodyImages'>
-				<img
-					src='./images/content-blonde-sitting-on-back@2x.png'
-					alt='.'
-				/>
-				<img
-					src='./images/delivery-man-wearing-a-face-ma@2x.png'
-					alt='.'
-				/>
-				<img
-					src='./images/photo-of-person-driving-138664@2x.png'
-					alt='ride'
-				/>
+				<img src='./images/content-blonde-sitting-on-back@2x.png' alt='.' />
+				<img src='./images/delivery-man-wearing-a-face-ma@2x.png' alt='.' />
+				<img src='./images/photo-of-person-driving-138664@2x.png' alt='ride' />
 			</div>
 			<div className='space2'></div>
 			<div className='space'>
@@ -40,12 +35,10 @@ export default function Home() {
 			<div className='color'></div>
 			<div className='ourOffer'>what we offer</div>
 			<div className='delivery-icons'>
-				<img
-					src='./images/Photos 28_03_2021 3_47_49 pm.png'
-					alt=''
-				/>
+				<img src='./images/Photos 28_03_2021 3_47_49 pm.png' alt='' />
 				<img src='./images/images.png' alt='' />
 			</div>
+			<Footer />
 		</div>
 	);
 }

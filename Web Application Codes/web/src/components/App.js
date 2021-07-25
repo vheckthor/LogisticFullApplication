@@ -1,39 +1,30 @@
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Nav from './Nav';
 import Home from './Home';
-import SignUp from './SignUp';
-import Footer from './Footer';
+import SignUpOld from './SignUp_Old';
 import LogIn from './Login';
-import Trial from './Trial';
-import '../css/index.css';
+import Welcome from './Welcome';
+import SignUp from './SignUp';
 
 function App() {
 	return (
 		<Router>
 			<Switch>
 				<Route exact path='/'>
-					<Nav />
 					<Home />
-					<Footer />
 				</Route>
-				<Route exact path='/register'>
-					<SignUp />
+				<Route path='/register'>
+					<SignUpOld />
 				</Route>
-				<Route exact path='/login'>
+				<Route path='/login'>
 					<LogIn />
 				</Route>
-				<Route exact path='/ride'>
-					<h1>Rides Components go here</h1>
-					<Link to='/'>
-						<button>Home</button>
-					</Link>
-					<Link to='/register'>
-						<button>Register</button>
-					</Link>
+				<Route path='/ride'>
+					<Welcome />
 				</Route>
-				<Route exact path='/map'>
-					<Trial />
+
+				<Route path='/sign_up'>
+					<SignUp />
 				</Route>
 				<Route>
 					<h1>Nothing is here</h1>
