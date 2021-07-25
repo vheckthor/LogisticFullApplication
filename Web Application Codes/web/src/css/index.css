@@ -68,7 +68,6 @@ a img {
 .triangle {
 	width: 27%;
 	height: 52vh;
-	/* border- */
 	transform: rotate(10deg);
 	clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
 }
@@ -81,7 +80,6 @@ a img {
 }
 
 .bodyText h1 {
-	/* font-weight:bolder; */
 	font-size: 60px;
 }
 

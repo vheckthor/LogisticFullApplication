@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import SignUp_Old from './SignUp_Old';
+import SignUpOld from './SignUp_Old';
 import LogIn from './Login';
-import Ride from './Ride';
 import Welcome from './Welcome';
 import SignUp from './SignUp';
 
@@ -15,7 +14,7 @@ function App() {
 					<Home />
 				</Route>
 				<Route path='/register'>
-					<SignUp_Old />
+					<SignUpOld />
 				</Route>
 				<Route path='/login'>
 					<LogIn />
@@ -23,7 +22,7 @@ function App() {
 				<Route path='/ride'>
 					<Welcome />
 				</Route>
-				
+
 				<Route path='/sign_up'>
 					<SignUp />
 				</Route>

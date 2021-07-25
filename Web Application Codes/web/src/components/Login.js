@@ -19,22 +19,19 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 	},
 	pap: {
-    
-    boxShadow: '3px 5px 2px rgba(112, 128, 144, .5)',
+		boxShadow: '3px 5px 2px rgba(112, 128, 144, .5)',
 		border: '2px solid rgb(236, 203, 203)',
 		padding: '0% !mportant',
 		width: '30%',
-		// height:'auto',
 		marginTop: '2.5%',
 		borderRadius: ' 4%',
 	},
 	avatar: {
-		// margin: theme.spacing(0),
 		marginLeft: '45%',
 		backgroundColor: theme.palette.secondary.main,
 	},
 	form: {
-		width: '100%', // Fix IE 11 issue.
+		width: '100%',
 		padding: '0%',
 		marginTop: theme.spacing(0),
 	},
@@ -45,9 +42,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	submit: {
 		width: '40%',
-		// marginTop: '2%',
 		padding: '1%',
-		// marginBottom:'0.5%',
 		marginLeft: '30%',
 		fontSize: '12px',
 	},
@@ -64,28 +59,6 @@ export default function LogIn() {
 					setSubmitting(false);
 				}, 500);
 			}}
-			//********Handling validation messages yourself*******/
-			// validate={values => {
-			//   let errors = {};
-			//   if (!values.email) {
-			//     errors.email = "Required";
-			//   } else if (!EmailValidator.validate(values.email)) {
-			//     errors.email = "Invalid email address";
-			//   }
-
-			//   const passwordRegex = /(?=.*[0-9])/;
-			//   if (!values.password) {
-			//     errors.password = "Required";
-			//   } else if (values.password.length < 8) {
-			//     errors.password = "Password must be 8 characters long.";
-			//   } else if (!passwordRegex.test(values.password)) {
-			//     errors.password = "Invalida password. Must contain one number";
-			//   }
-
-			//   return errors;
-			// }}
-			//********Using Yum for validation********/
-
 			validationSchema={Yup.object().shape({
 				email: Yup.string().email().required('Required'),
 				password: Yup.string()
@@ -110,9 +83,7 @@ export default function LogIn() {
 						<div className={classes.paper}>
 							<CssBaseline />
 							<form onSubmit={handleSubmit} className={classes.form}>
-								<Avatar className={classes.avatar}>
-									{/* <LockOutlinedIcon /> */}
-								</Avatar>
+								<Avatar className={classes.avatar}></Avatar>
 								<Typography component='h1' variant='h5'>
 									Sign In
 								</Typography>
