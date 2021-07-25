@@ -21,7 +21,7 @@ export default function SignUp() {
 	let [propValues, setPropValues] = useState({
 		password: true,
 		phoneNumber: '',
-		canvasHeight: '650px', //85vh
+		canvasHeight: '650px',
 	});
 
 	const useStyles = makeStyles((theme) => ({
@@ -40,7 +40,7 @@ export default function SignUp() {
 			backgroundColor: '#fafafa',
 		},
 		form: {
-			width: '100%', // Fix IE 11 issue.
+			width: '100%',
 			padding: '3% 0% 0% 0%',
 			marginTop: theme.spacing(0),
 		},
@@ -143,7 +143,6 @@ export default function SignUp() {
 			backgroundColor: '#FFF',
 			border: 'none',
 			'&:hover': {
-				// marginBottom: '15%',
 				color: '#f50057',
 				backgroundColor: '#FFF',
 			},
@@ -185,14 +184,10 @@ export default function SignUp() {
 			top: '100%',
 			left: '2%',
 			color: 'red',
-		
 		},
 	}));
 	const classes = useStyles();
 	let history = useHistory();
-
-	// const phoneNumberOnChange = (phoneNumber) =>
-	// setPropValues({ ...propValues, phoneNumber });
 
 	return (
 		<div className='signup-page-background'>
@@ -307,17 +302,6 @@ export default function SignUp() {
 								<Typography variant='h5' className={classes.text}>
 									Enter 4 digit sent to you at <b>+{propValues.phoneNumber}</b>
 								</Typography>
-								{/* 
-								<Field
-									id='otp'
-									name='otp'
-									type='number'
-									placeholder='0000'
-									className={classes.textField}
-									autoFocus
-								/>
-
-								<ErrorMessage name='otp' component='div' /> */}
 								<Field name='otp' id='otp'>
 									{({ field, meta }) => (
 										<div style={{ position: 'relative' }}>
@@ -346,15 +330,6 @@ export default function SignUp() {
 									Get Moving With Transis
 								</Typography>
 								<label htmlFor='fullName'>Full Name</label>
-								{/* <Field
-									id='fullName'
-									name='fullName'
-									type='text'
-									placeholder='Enter Your Full Name'
-									className={classes.textField}
-								/>
-								<ErrorMessage name='fullName' component='div' /> */}
-
 								<Field name='fullName' id='fullName'>
 									{({ field, meta }) => (
 										<div style={{ position: 'relative' }}>
@@ -409,11 +384,6 @@ export default function SignUp() {
 									>
 										{propValues.password ? <Visibility /> : <VisibilityOff />}
 									</IconButton>
-									{/* <ErrorMessage
-										name='password'
-										component='div'
-										className={classes.passwordErrorMessage}
-									/> */}
 								</div>
 							</div>
 						</FormikStepper>
@@ -436,11 +406,11 @@ export function FormikStepper({
 	const currentChild = childrenArray[step];
 	useEffect(() => {
 		if (step > 0) {
-			setPropValues({ ...propValues, canvasHeight: '45vh' });
+			setPropValues({ ...propValues, canvasHeight: '380px' });
 		}
 
 		if (step === 2) {
-			setPropValues({ ...propValues, canvasHeight: '60vh' });
+			setPropValues({ ...propValues, canvasHeight: '450px' });
 		}
 	}, [step]);
 
@@ -480,7 +450,11 @@ export function FormikStepper({
 										backgroundColor: 'inherit',
 									}}
 								/>
-								<ErrorMessage name='phoneNumber' component='div' />
+								<ErrorMessage
+									name='phoneNumber'
+									component='div'
+									style={{ color: 'red' }}
+								/>
 							</div>
 						) : null}
 						<Button
@@ -495,9 +469,6 @@ export function FormikStepper({
 								} else if (step === 1 && !errors.otp) {
 									setStep(step + 1);
 								}
-								// setStep(step + 1);
-								// console.log('step is ' + step);
-								// console.log('child num ' + (childrenArray.length - 1));
 							}}
 						>
 							Next
@@ -541,10 +512,7 @@ export function FormikStepper({
 						) : step === 1 ? (
 							<Button
 								className={`${style.button} ${style.resend} ${style.noTransform}`}
-								// color='primary'
 								variant='outlined'
-								// disableElevation
-								// disabled={isSubmitting}
 							>
 								Resend Code
 							</Button>

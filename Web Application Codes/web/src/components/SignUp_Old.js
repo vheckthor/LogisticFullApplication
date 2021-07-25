@@ -63,35 +63,9 @@ export default function SignUp() {
 					setSubmitting(false);
 				}, 500);
 			}}
-			//********Handling validation messages yourself*******/
-			// validate={values => {
-			//   let errors = {};
-			//   if (!values.email) {
-			//     errors.email = "Required";
-			//   } else if (!EmailValidator.validate(values.email)) {
-			//     errors.email = "Invalid email address";
-			//   }
-
-			//   const passwordRegex = /(?=.*[0-9])/;
-			//   if (!values.password) {
-			//     errors.password = "Required";
-			//   } else if (values.password.length < 8) {
-			//     errors.password = "Password must be 8 characters long.";
-			//   } else if (!passwordRegex.test(values.password)) {
-			//     errors.password = "Invalida password. Must contain one number";
-			//   }
-
-			//   return errors;
-			// }}
-			//********Using Yum for validation********/
-
 			validationSchema={Yup.object().shape({
-				FirstName: Yup.string()
-					// .FirstName()
-					.required('Required'),
-				LastName: Yup.string()
-					// .LastName()
-					.required('Required'),
+				FirstName: Yup.string().required('Required'),
+				LastName: Yup.string().required('Required'),
 				email: Yup.string().email().required('Required'),
 				password: Yup.string()
 					.required('No password provided.')
@@ -115,9 +89,7 @@ export default function SignUp() {
 						<div className={classes.paper}>
 							<CssBaseline />
 							<form onSubmit={handleSubmit} className={classes.form}>
-								<Avatar className={classes.avatar}>
-									{/* <LockOutlinedIcon /> */}
-								</Avatar>
+								<Avatar className={classes.avatar}></Avatar>
 								<Typography component='h1' variant='h5'>
 									Sign up
 								</Typography>

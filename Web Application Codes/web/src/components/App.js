@@ -21,10 +21,9 @@ function App() {
 					<LogIn />
 				</Route>
 				<Route path='/ride'>
-					{/* <Ride /> */}
 					<Welcome />
 				</Route>
-				<Route path='/map'>{/* <Trial /> */}</Route>
+				
 				<Route path='/sign_up'>
 					<SignUp />
 				</Route>

@@ -28,7 +28,6 @@ body {
 	display: inline;
 }
 path {
-	/* width: 10%; */
 	margin: 0%;
 }
 
@@ -130,7 +129,6 @@ br {
 .space span {
 	font-size: 17px;
 	font-weight: bolder;
-	/* font-family: fantasy; */
 }
 
 .space {
@@ -144,7 +142,6 @@ br {
 	font-family: 'Open Sans';
 	font-weight: bolder;
 	text-align: justify;
-	/* margin-left: -1.7%; */
 	transform: rotate(0deg);
 	height: 10vh;
 }
