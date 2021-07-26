@@ -4,11 +4,23 @@ import AutoComplete from '../AutoComplete';
 import Marker from './Marker';
 import './Sidenav/sidenav.css';
 import Pin from '../icons/location-pin.svg';
+// import { Icon } from '@iconify/react'
+// import locationIcon from '@iconify/icons-mdi/map-marker'
+// import {
+//   GoogleMapProvider,
+//   HeatMap,
+//   InWindow,
+//   MapBox,
+//   Marker,
+//   OverlayView,
+//   Polygon,
+// } from '@googlemap-react/core'
 
 const MapsPage = () => {
 	const [lat, setLat] = useState(9.082);
 	const [lng, setLng] = useState(8.6753);
 	const [zoom, setZoom] = useState(2);
+	// const [google, setGoogle] = useState();
 	const [mapApiLoaded, setMapApiLoaded] = useState(false);
 	const [mapApi, setMapApi] = useState();
 	const [mapInstance, setMapInstance] = useState();
@@ -34,7 +46,14 @@ const MapsPage = () => {
 		setMapInstance(map);
 		setMapApiLoaded(true);
 	};
+	// const [stateInfo, setStateInfo] = useState([]);
 
+	//  const LocationPin = ({ text }) => (
+	//    <div className="pin">
+	//      <Icon icon={locationIcon} className="pin-icon" />
+	//      <p className="pin-text">{text}</p>
+	//    </div>
+	//  )
 	return (
 		<>
 			<div
@@ -46,6 +65,7 @@ const MapsPage = () => {
 			>
 				<div
 					style={{
+						// flex:0.95,
 						font: '1.4rem',
 						margin: '0 auto',
 						display: 'flex',
@@ -62,8 +82,9 @@ const MapsPage = () => {
 										setPlaces([...places, place]);
 										const { address_components } = place;
 
-										const { short_name } =
-											address_components[address_components.length - 2];
+										const { short_name } = address_components[
+											address_components.length - 2
+										];
 
 										console.log(short_name);
 										const res = await fetch(
@@ -86,8 +107,9 @@ const MapsPage = () => {
 									addplace={async (place) => {
 										setPlaces([...places, place]);
 										const { address_components } = place;
-										const { short_name } =
-											address_components[address_components.length - 2];
+										const { short_name } = address_components[
+											address_components.length - 2
+										];
 										console.log(short_name);
 										const res = await fetch(
 											`https://pvc-api.osinachi.me/api/states/${short_name}`
@@ -133,6 +155,22 @@ const MapsPage = () => {
 									lng={place.geometry.location.lng()}
 								/>
 							))}
+
+							{/* { <LocationPin
+                  lat={lat}
+                  lng={lng}
+                  text={locator}
+                /> } */}
+
+							{/* {places.length > 1 &&
+              places.map((place) => (
+                <Marker
+                  key={place.id}
+                  text={Pin}
+                  lat={place.geometry.location.lat()}
+                  lng={place.geometry.location.lng()}
+                />
+              ))}      */}
 						</GoogleMapReact>
 					</div>
 				</div>

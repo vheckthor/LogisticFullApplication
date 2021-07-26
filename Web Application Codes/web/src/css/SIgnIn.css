@@ -2,10 +2,12 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
+    /* font-family: montserrat; */
     font-family: sans-serif;
 }
 
 #loginDiv{
+    /* background-color: rgb(234, 225, 198); */
     box-shadow:3px 5px 2px rgba(112, 128, 144, .5);
     border: 1px solid rgb(236, 203, 203);
     width: 30%;
@@ -49,10 +51,17 @@
     border: 1px solid rgb(245, 114, 114);
     background-color:transparent;
     outline: none;
+    /* transition: .4s ease; */
 }
 
 #checkBox{
     margin-top: 2%;
+    /* margin-bottom: 2%; */
+
+}
+
+#socialLinks {
+    /* text-align: center; */
 }
 
 #socialLinks > a{

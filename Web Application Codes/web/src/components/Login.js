@@ -19,19 +19,22 @@ const useStyles = makeStyles((theme) => ({
 		alignItems: 'center',
 	},
 	pap: {
-		boxShadow: '3px 5px 2px rgba(112, 128, 144, .5)',
+    
+    boxShadow: '3px 5px 2px rgba(112, 128, 144, .5)',
 		border: '2px solid rgb(236, 203, 203)',
 		padding: '0% !mportant',
 		width: '30%',
+		// height:'auto',
 		marginTop: '2.5%',
 		borderRadius: ' 4%',
 	},
 	avatar: {
+		// margin: theme.spacing(0),
 		marginLeft: '45%',
 		backgroundColor: theme.palette.secondary.main,
 	},
 	form: {
-		width: '100%',
+		width: '100%', // Fix IE 11 issue.
 		padding: '0%',
 		marginTop: theme.spacing(0),
 	},
@@ -42,7 +45,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	submit: {
 		width: '40%',
+		// marginTop: '2%',
 		padding: '1%',
+		// marginBottom:'0.5%',
 		marginLeft: '30%',
 		fontSize: '12px',
 	},
@@ -59,6 +64,7 @@ export default function LogIn() {
 					setSubmitting(false);
 				}, 500);
 			}}
+
 			validationSchema={Yup.object().shape({
 				email: Yup.string().email().required('Required'),
 				password: Yup.string()
@@ -83,7 +89,9 @@ export default function LogIn() {
 						<div className={classes.paper}>
 							<CssBaseline />
 							<form onSubmit={handleSubmit} className={classes.form}>
-								<Avatar className={classes.avatar}></Avatar>
+								<Avatar className={classes.avatar}>
+									{/* <LockOutlinedIcon /> */}
+								</Avatar>
 								<Typography component='h1' variant='h5'>
 									Sign In
 								</Typography>
@@ -124,14 +132,7 @@ export default function LogIn() {
 										/>
 									}
 									label='I Agree to Terms and Conditions.'
-									control={
-										<Checkbox
-											className='terms'
-											value='allowExtraEmails'
-											color='primary'
-										/>
-									}
-									label='Remember Me'
+									// label='Remember Me'
 									className={classes.agree}
 								/>
 								<button
@@ -145,12 +146,12 @@ export default function LogIn() {
 								<div className='social'>
 									<div className='socialSpan'>OR Sign In With</div>
 									<div className='socials'>
-										<a href='' className='socialf'>
+										<a href='/' className='socialf'>
 											<i className='fa fa-facebook-f' aria-hidden='true'></i>
 											acebook
 										</a>
 										OR
-										<a href='' className='socialg'>
+										<a href='/' className='socialg'>
 											<i className='fa fa-google' aria-hidden='true'></i>
 											oogle
 										</a>
