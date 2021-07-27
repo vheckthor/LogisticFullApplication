@@ -68,9 +68,9 @@ a img {
   width: 20%;
 }
 
-.bodDiv{
+.bodyjs{
   background: url('action-adult-blur-car-620335_i.png');
-  background-size: cover;
+  background-size: 100%;
   background-repeat: no-repeat;
   height: 100vh;
 }
@@ -79,7 +79,8 @@ a img {
   width: 43% !important;
   margin-left: 7%;
   margin-right: .5%;
-  padding:4% 0 0 5% !important;
+  /* margin-top: 2%; */
+  padding:4% 0 0 0px !important;
   align-items: center;
   background-color: #fff;
   justify-content: center;
@@ -128,6 +129,4 @@ a img {
   margin-top: 5px;
 
 }
-.footer{
-  margin-top: 0% !important;
-}
+

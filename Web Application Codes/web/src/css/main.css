@@ -1,6 +1,5 @@
-*{text-decoration: none;}
 .App {
-    font-family: montserrat;
+    font-family: sans-serif;
   }
   
   h1 {
@@ -21,16 +20,16 @@
   
   label {
     margin-bottom: 1%;
-    font-size: 13px;
+    font-size: 14px;
   }
   
   input {
     margin-bottom: 5%;
     padding: 2%;
     background: transparent;
-    font-size: 13px;
-    border-radius: 7px;
-    border: 2px solid rgb(202, 200, 200);
+    font-size: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(236, 203, 203);
   }
   
   input.error {
@@ -45,34 +44,37 @@
   }
   
   button {
-    background-color:rgb(241, 54, 132);
+    padding: 10px 15px;
+    background-color:rgb(226, 74, 74);
     color: white;
+    border: none;
     transition: all .8s ease-in-out;
+    border-bottom: 2px solid rgb(236, 203, 203);
+    background-color: 250ms;
     display: block;
+    border-radius: 25px;
 }
 
 button:hover {
+    background-color:rgba(226, 74, 74, .65);
     cursor: pointer;
-}
+    border: 2px solid rgb(236, 203, 203);
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+  }
 
 .social{
     text-align: center;
-    /* margin: 3% 0%; */
 }
 
 .socialSpan{
-    /* margin-bottom: 20%; */
     font-size: 12px;
-    /* background-color: blue; */
-    /* color: white; */
     padding: 3%;
 }
 
 a{
     text-decoration: none;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    border-radius: 5px;
+    color: black;
 }
 .socials{
     margin-bottom: 2%;
@@ -92,42 +94,4 @@ a{
 .signInAcc{
     margin-left: 5%;
     text-align: center;
-}
-.MuiContainer-root, 
-.makeStyles-pap-2, 
-.MuiContainer-maxWidthLg,
-.makeStyles-submit-6{
-  padding: 0% !important;
-}
-.makeStyles-submit-6{
-  border-radius: 5px !important;
-  padding: 2% !important;
-  font-size: 19px;
-}
-.MuiContainer-root{
-  padding: 1% !important;
-}
-.p{
-  font-size: 12px;
-  margin-top: 3%;
-  margin-bottom: 5%;
-}
-.p span{
-  color: #ea355c;
-}
-.MuiTypography-h5{
-  font-size: 16px !important;
-  font-weight: bolder !important;
-  margin-bottom: 4% !important;
-}
-.MuiLink-underlineHover {
-  color: #fff !important;
-
-}
-.makeStyles-submit {
-  border: none !important;
-}
-.makeStyles-submit-22 {
-  padding: 3% !important;
-  border-radius: 10px !important;
 }

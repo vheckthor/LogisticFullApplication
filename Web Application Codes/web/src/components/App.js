@@ -1,45 +1,39 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import SignUp from './SignUp';
-import Footer from './Footer';
+import SignUpOld from './SignUp_Old';
 import LogIn from './Login';
-import Ride from './Ride';
-import '../css/index.css';
-import Drive from './Drive';
 import Welcome from './Welcome';
+import SignUp from './SignUp'; 
+import {Error, ErrorPage} from './Error.js'
 
 function App() {
 	return (
 		<Router>
-					
 			<Switch>
 				<Route exact path='/'>
 					<Home />
-					<Footer />
 				</Route>
 				<Route path='/register'>
-					<SignUp />
+					<SignUpOld />
 				</Route>
 				<Route path='/login'>
 					<LogIn />
 				</Route>
 				<Route path='/ride'>
-					{/* <Ride /> */}
-					<Welcome/>
+					<Welcome />
 				</Route>
-				<Route path='/ride2'>
-					<Ride />
+
+				<Route path='/sign_up'>
+					<SignUp />
 				</Route>
-				<Route path='/drive'>
-					<Drive/>
+				<Route path='/error404'>
+					<Error />
 				</Route>
-				<Route path='/map'>{/* <Trial /> */}</Route>
-				<Route>
-					<h1>Nothing is here</h1>
+				<Route path='/errorPage'>
+					<ErrorPage />
 				</Route>
 			</Switch>
-					
 		</Router>
 	);
 }
