@@ -37,7 +37,7 @@ path {
 	margin: 0 2%;
 }
 
-.topLogo {
+#signup-top-nav .topLogo {
 	display: inline-flex;
 	margin-left: 5%;
 	width: 35%;

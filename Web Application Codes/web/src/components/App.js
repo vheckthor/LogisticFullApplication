@@ -27,7 +27,7 @@ function App() {
 				<Route path='/sign_up'>
 					<SignUp />
 				</Route>
-				<Route path='/error404'>
+				<Route >
 					<Error />
 				</Route>
 				<Route path='/errorPage'>
