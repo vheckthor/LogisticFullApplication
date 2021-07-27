@@ -142,7 +142,7 @@ C 11.82566070556641 1.249995231628418 15.3637809753418 0.4880675673484802 18.942
                     <h3  style={{ fontFamily:'sans-serif', marginTop:'1%',width:'77%',textAlign:"justify"}}>
                         We delight in getting you to where you need to go, but we can't get you to the page you requested. Do double check the URL and try again. You might be able to find what your'e looking for from our homepage, click the button bellow to come home.
                     </h3>
-                    <button style={{background:"#FF4874", fontFamily:'sans-serif', borderRadius:'2px'}} >
+                    <button style={{background:"#FF4874", fontFamily:'sans-serif', borderRadius:'2px', padding:'1% 4%'}} >
                         Return Home
                     </button>
                 </center>
