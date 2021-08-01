@@ -1,29 +1,17 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
+import '../css/error.css'
 
-export class Error extends Component {
+export default class Error extends Component {
     render() {
-        const navstyle = {
-            backgroundColor: "#EF1D52",
-            height: '10vh',
-        };
-        const bodystyle = {
-            display: 'inline',
-            textAlign: 'center',
-            justifyContent: 'center',
-            color: '#FF4874',
-            alignItems: 'center'
-        }
-        const Logostyle = {
-            widht: '120px !important',
-            display: 'block !important',
-        }
+
         return (
             <div>
                 <center>
-                    <div className='errorNav' style={navstyle}></div>
+                    <div className='errorNav'></div>
 
-                    <div className='errorBody' style={bodystyle} >
-                        <div className='topLogo' style={{ width: '40%', margin: 'auto', marginTop: '1%' }} >
+                    <div className='errorBody'  >
+                        <div className='logo' >
                             <svg className='Path_2076' viewBox='0 0.492 44.69 17.878' >
                                 <path
                                     id='Path_2076'
@@ -61,7 +49,7 @@ C 11.82566070556641 1.249995231628418 15.3637809753418 0.4880675673484802 18.942
                                 ></path>
                             </svg>
                         </div>
-                        <h3 className='topHeader' style={{ color: '#FF4874', display: 'block !important', minWidth: '100% !important' }}>TRANSIS</h3>
+                        <h3 className='errorHeader' style={{  }}>TRANSIS</h3>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="620.491" height="209.549" viewBox="0 0 620.491 209.549">
                         <g id="_705_Converted_" data-name="705 [Converted]" transform="translate(-119.954 -345.365)">
@@ -136,26 +124,18 @@ C 11.82566070556641 1.249995231628418 15.3637809753418 0.4880675673484802 18.942
                             <path id="Path_2922" data-name="Path 2922" d="M348.152,223.7a2.462,2.462,0,1,1-2.462,2.462,2.462,2.462,0,0,1,2.462-2.462Z" transform="translate(352.801 267.774)" fill="#013e4c" />
                         </g>
                     </svg>
-                    <h3 style={{color:"#FF4874", fontFamily:'sans-serif', marginTop:'3%'}}>
+                    <h3 style={{ color: "#FF4874", fontFamily: 'sans-serif', marginTop: '3%' }}>
                         Sorry we could'nt find the page
                     </h3>
-                    <h3  style={{ fontFamily:'sans-serif', marginTop:'1%',width:'77%',textAlign:"justify"}}>
+                    <h3 style={{ fontFamily: 'sans-serif', marginTop: '1%', width: '77%', textAlign: "justify" }}>
                         We delight in getting you to where you need to go, but we can't get you to the page you requested. Do double check the URL and try again. You might be able to find what your'e looking for from our homepage, click the button bellow to come home.
                     </h3>
-                    <button style={{background:"#FF4874", fontFamily:'sans-serif', borderRadius:'2px', padding:'1% 4%'}} >
+                    <Link to='/' style={{ background: "#FF4874", fontFamily: 'sans-serif', borderRadius: '10px', padding: '1% 4%', width:'20%' }} >
                         Return Home
-                    </button>
+                    </Link>
                 </center>
             </div>
         )
     }
 }
-export class ErrorPage extends Component {
-    render() {
-        return (
-            <div>
-                this is the real error page
-            </div>
-        )
-    }
-}
+

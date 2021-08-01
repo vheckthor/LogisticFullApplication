@@ -7,62 +7,23 @@
 body {
 	padding: 0;
 }
-
-.topNav {
-	width: 100%;
+#home-nav{
+		width: 100%;
 	height: 10vh;
-	align-items: center;
 	background-color: #ef1d52;
 	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
 }
-
-.topLogo svg {
+#home-nav .topLogo svg{
 	background-color: azure;
-	padding: 1%;
-	border: #ef1d52 2px solid;
-	box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
-	border-radius: 10px;
-	width: 10%;
-	line-height: 50px;
-	height: 7vh;
-	display: inline;
-}
-path {
-	margin: 0%;
-}
-
-.topHeader {
-	line-height: 50px;
-	color: azure;
-	margin: 0 2%;
-}
-
-#signup-top-nav .topLogo {
-	display: inline-flex;
-	margin-left: 5%;
-	width: 35%;
-}
-
-.topList {
-	display: flex;
-	list-style-type: none;
-	flex-wrap: nowrap;
-	margin-left: 40%;
-}
-.topList li {
-	display: inline-flex;
-	list-style-type: none;
-	margin-right: 25%;
-	color: azure;
-}
-.topList li a {
-	text-decoration: none;
-	color: azure;
-}
-
-a img {
-	color: azure;
-	width: 20%;
+    padding: 2%;
+    border: rgb(241, 54, 132) 2px solid;
+    box-shadow: 3px 4px 6px rgb(0 0 0 / 30%);
+    border-radius: 10px;
+    height: 7vh;
+	margin-right: 2%;
+	width: 60px;
 }
 
 .triangle {
@@ -142,13 +103,6 @@ br {
 	text-align: justify;
 	transform: rotate(0deg);
 	height: 10vh;
-}
-.footer {
-	width: 100%;
-	height: 15vh;
-	margin-top: 30%;
-	padding-top: 2%;
-	background-color: #ef1d52;
 }
 
 .color {

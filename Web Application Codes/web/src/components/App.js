@@ -4,8 +4,10 @@ import Home from './Home';
 import SignUpOld from './SignUp_Old';
 import LogIn from './Login';
 import Welcome from './Welcome';
+import Footer from './Footer'
 import SignUp from './SignUp'; 
-import {Error, ErrorPage} from './Error.js'
+import Error from './Error.js'
+// import ErrorPage from './ErrorPage'
 
 function App() {
 	return (
@@ -13,6 +15,7 @@ function App() {
 			<Switch>
 				<Route exact path='/'>
 					<Home />
+					<Footer />
 				</Route>
 				<Route path='/register'>
 					<SignUpOld />
@@ -30,9 +33,9 @@ function App() {
 				<Route >
 					<Error />
 				</Route>
-				<Route path='/errorPage'>
+				{/* <Route>
 					<ErrorPage />
-				</Route>
+				</Route> */}
 			</Switch>
 		</Router>
 	);
