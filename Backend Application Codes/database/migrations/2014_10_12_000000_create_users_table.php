@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -14,26 +14,16 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->enum('payment_mode', ['CASH', 'CARD', 'PAYPAL']);
+            $table->id();
+            $table->string('fullname')->nullable();
+            $table->string('encodedKey')->unique()->index()->nullable();
             $table->string('email')->unique();
-            $table->string('mobile')->nullable();
-            $table->string('password');
-            $table->string('picture')->nullable();
-            $table->string('device_token')->nullable();
-            $table->string('device_id')->nullable();
-            $table->enum('device_type',array('android','ios'));
-            $table->enum('login_by',array('manual','facebook','google'));
-            $table->string('social_unique_id')->nullable();
-            $table->double('latitude', 15, 8)->nullable();
-            $table->double('longitude',15,8)->nullable();
-            $table->string('stripe_cust_id')->nullable();
-            $table->float('wallet_balance')->default(0);
-            $table->decimal('rating', 4, 2)->default(5);
-            $table->mediumInteger('otp')->default(0);
+            $table->string('phone')->nullable()->unique();
+            $table->enum('gender', ['male', 'female']);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password')->nullable();
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -2,19 +2,31 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
+     * The path to the "home" route for your application.
      *
-     * In addition, it is set as the URL generator's root namespace.
+     * This is used by Laravel authentication to redirect users after login.
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    public const HOME = '/home';
+
+    /**
+     * The controller namespace for the application.
+     *
+     * When present, controller route declarations will automatically be prefixed with this namespace.
+     *
+     * @var string|null
+     */
+    // protected $namespace = 'App\\Http\\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -23,182 +35,29 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->configureRateLimiting();
 
-        parent::boot();
-    }
+        $this->routes(function () {
+            Route::prefix('api')
+                ->middleware('api')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/api.php'));
 
-    /**
-     * Define the routes for the application.
-     *
-     * @return void
-     */
-    public function map()
-    {
-        $this->mapApiRoutes();
-
-        $this->mapWebRoutes();
-
-        $this->mapAccountRoutes();
-
-        $this->mapFleetRoutes();
-
-        $this->mapDispatcherRoutes();
-
-        $this->mapProviderRoutes();
-
-        $this->mapAdminRoutes();
-
-        $this->mapProviderApiRoutes();
-
-        //
-    }
-
-    /**
-     * Define the "admin" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapAdminRoutes()
-    {
-        Route::group([
-            'middleware' => ['web', 'admin', 'auth:admin'],
-            'prefix' => 'admin',
-            'as' => 'admin.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/admin.php');
+            Route::middleware('web')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/web.php'));
         });
     }
 
     /**
-     * Define the "provider" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
+     * Configure the rate limiters for the application.
      *
      * @return void
      */
-    protected function mapProviderRoutes()
+    protected function configureRateLimiting()
     {
-        Route::group([
-            'middleware' => ['web', 'provider', 'auth:provider'],
-            'prefix' => 'provider',
-            'as' => 'provider.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/provider.php');
-        });
-    }
-
-    /**
-     * Define the "dispatcher" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapDispatcherRoutes()
-    {
-        Route::group([
-            'middleware' => ['web', 'dispatcher', 'auth:dispatcher'],
-            'prefix' => 'dispatcher',
-            'as' => 'dispatcher.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/dispatcher.php');
-        });
-    }
-
-    /**
-     * Define the "fleet" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapFleetRoutes()
-    {
-        Route::group([
-            'middleware' => ['web', 'fleet', 'auth:fleet'],
-            'prefix' => 'fleet',
-            'as' => 'fleet.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/fleet.php');
-        });
-    }
-
-    /**
-     * Define the "account" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapAccountRoutes()
-    {
-        Route::group([
-            'middleware' => ['web', 'account', 'auth:account'],
-            'prefix' => 'account',
-            'as' => 'account.',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/account.php');
-        });
-    }
-
-    /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
-     */
-    protected function mapWebRoutes()
-    {
-        Route::group([
-            'middleware' => 'web',
-            'namespace' => $this->namespace,
-        ], function ($router) {
-            require base_path('routes/web.php');
-        });
-    }
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
-    {
-        Route::group([
-            'middleware' => 'api',
-            'namespace' => $this->namespace,
-            'prefix' => 'api/user',
-        ], function ($router) {
-            require base_path('routes/api.php');
-        });
-    }
-
-
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapProviderApiRoutes()
-    {
-        Route::group([
-            'namespace' => $this->namespace,
-            'prefix' => 'api/provider',
-        ], function ($router) {
-            require base_path('routes/providerapi.php');
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
 }
