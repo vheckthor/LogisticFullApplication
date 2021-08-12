@@ -1,9 +1,10 @@
 import React from 'react';
+import '../css/footer.css'
 
 export default function Footer() {
 	return (
 		<div className='footer'>
-			<div className='topLogo'>
+			<div className='footerLogo'>
 				<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
 					<path
 						id='Path_2076'
@@ -40,7 +41,7 @@ export default function Footer() {
 						fill='#EF1D52'
 					></path>
 				</svg>
-				<h3 className='topHeader'>TRANSIS</h3>
+				<h3 className='footerText'>TRANSIS</h3>
 			</div>
 		</div>
 	);

@@ -7,9 +7,9 @@ function Welcome() {
 	return (
 		<div className='signup-page-background'>
 			<div className='signup-page-foreground'>
-				<Nav />
+				<Nav className='topNav' />
 				<div className='welcome'>
-					<div className='topLogo'>
+					<div className='welcomeLogo'>
 						<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
 							<path
 								id='Path_2076'

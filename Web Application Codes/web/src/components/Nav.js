@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../css/nav.css'
 
 export default function Nav() {
 	return (
 		<div>
-			<nav id='signup-top-nav'>
-				<div className='topLogo' id='signup-top-logo'>
+			<nav id='top-nav'>
+				<div className='topLogo' >
 					<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
 						<path
 							id='Path_2076'
@@ -45,6 +46,9 @@ export default function Nav() {
 					<h3 className='topHeader'>TRANSIS</h3>
 				</div>
 				<ul id='signup-top-list'>
+					<li id="signup-top-list-element-1">
+						<Link to='/'>Home</Link>
+					</li>
 					<li id="signup-top-list-element-1">
 						<Link to='/ride'>Ride</Link>
 					</li>
