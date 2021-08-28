@@ -29,11 +29,11 @@ export default function Home() {
 				</ul>
 				<div className='action-buttons'>
 					<button>
-						<Link id='login'>Log In</Link>
+						<Link to='/login'  id='login'>Log In</Link>
 					</button>
 					<button>
 						<PersonOutlinedIcon />
-						<Link>Sign Up</Link>
+						<Link to='/sign_up'>Sign Up</Link>
 					</button>
 				</div>
 			</nav>
