@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PersonOutlinedIcon from '@material-ui/icons/PersonOutline';
+
 import '../css/nav.css'
 import LogoSVG from './LogoSVG';
 
@@ -25,6 +27,15 @@ export default function Nav() {
 						<Link to='/logistics'>Logistics</Link>
 					</li>
 				</ul>
+				<div className='action-buttons'>
+					<button>
+						<Link to='/login'  id='login'>Log In</Link>
+					</button>
+					<button>
+						<PersonOutlinedIcon />
+						<Link to='/sign_up'>Sign Up</Link>
+					</button>
+				</div>
 			</nav>
 		</div>
 	);
