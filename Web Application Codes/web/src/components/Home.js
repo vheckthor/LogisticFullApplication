@@ -1,31 +1,41 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PersonOutlinedIcon from '@material-ui/icons/PersonOutline';
 
 import LogoSVG from './LogoSVG';
 import '../css/index.css';
-import {Link} from 'react-router-dom'
 
 export default function Home() {
 	return (
 		<div>
 			<nav id='home-nav'>
-				<div className='topLogo' >
+				<div className='topLogo'>
 					<LogoSVG />
 					<h3 className='topHeader'>TRANSIS</h3>
 				</div>
 				<ul id='signup-top-list'>
-					<li id="signup-top-list-element-1">
+					<li id='signup-top-list-element-1'>
 						<Link to='/'>Home</Link>
 					</li>
-					<li id="signup-top-list-element-2">
+					<li id='signup-top-list-element-2'>
 						<Link to='/ride'>Ride</Link>
 					</li>
-					<li id="signup-top-list-element-3">
+					<li id='signup-top-list-element-3'>
 						<Link to='/drive'>Drive</Link>
 					</li>
-					<li id="signup-top-list-element-4">
+					<li id='signup-top-list-element-4'>
 						<Link to='/logistics'>Logistics</Link>
 					</li>
 				</ul>
+				<div className='action-buttons'>
+					<button>
+						<Link id='login'>Log In</Link>
+					</button>
+					<button>
+						<PersonOutlinedIcon />
+						<Link>Sign Up</Link>
+					</button>
+				</div>
 			</nav>
 			<div className='bodyText'>
 				<h1>
