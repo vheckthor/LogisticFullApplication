@@ -7,6 +7,7 @@ import Welcome from './Welcome';
 import Footer from './Footer';
 import SignUp from './SignUp';
 import Error from './Error.js';
+import ProfileDetails from './ProfileDetails';
 import SignUpOption from './SignUpOption';
 // import ErrorPage from './ErrorPage'
 
@@ -26,6 +27,15 @@ function App() {
 
 				<Route exact path='/sign_up/rider'>
 					<SignUp />
+				</Route>
+
+				<Route exact path='/sign_up/driver'>
+					{/* Bello's implementation */}
+				</Route>
+
+				<Route path="/profile-details">
+					<ProfileDetails />
+
 				</Route>
 
 				<Route path='/register'>
