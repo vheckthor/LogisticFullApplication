@@ -1,0 +1,12 @@
+.profile-page-background {
+	background: url(./action-adult-blur-car-620335_i.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+.profile-page-foreground {
+	height: inherit;
+	background-image: linear-gradient(180deg, #0000003d, #000000);
+}
