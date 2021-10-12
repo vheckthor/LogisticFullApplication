@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './Home';
-import SignUpOld from './SignUp_Old';
+// import SignUpOld from './SignUp_Old';
 import LogIn from './Login';
 import Welcome from './Welcome';
 import Footer from './Footer'
 import SignUp from './SignUp'; 
 import Error from './Error.js'
+import SignUp2 from './SignUp_Old'
+import SignUpOption from './SignUpOption';
 // import ErrorPage from './ErrorPage'
 
 function App() {
@@ -18,7 +20,10 @@ function App() {
 					<Footer />
 				</Route>
 				<Route path='/register'>
-					<SignUpOld />
+					<SignUp />
+				</Route>
+				<Route path='/order'>
+					<SignUp2/>
 				</Route>
 				<Route path='/login'>
 					<LogIn />
@@ -28,7 +33,8 @@ function App() {
 				</Route>
 
 				<Route path='/sign_up'>
-					<SignUp />
+					<SignUpOption />
+					{/* <SignUp /> */}
 				</Route>
 				<Route >
 					<Error />

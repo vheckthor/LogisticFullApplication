@@ -134,4 +134,30 @@ br {
 	width: 10%;
 	height: 12vh;
 }
+.action-buttons {
+	display: flex;
+}
+.action-buttons button,
+.action-buttons button:hover {
+	margin-right: 20px;
+	border-radius: 5px;
+	border: 0;
+	padding: 10px 30px;
+	font-weight: 500;
+	font-size: 100%;
+	background-color: transparent;
+}
+.action-buttons button:last-child {
+	display: flex;
+	justify-content: space-between;
+	color: #ef1d52;
+	background-color: #fff;
+}
+.action-buttons a {
+	color: #ef1d52;
+}
+#login {
+	color: #fff;
+}
+
 

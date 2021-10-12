@@ -1,19 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import ErrorSVG from './ErrorSVG';
-import '../css/error.css';
-
-export default class Error extends Component {
-	render() {
-		return (
-			<div>
-				<center>
-					<div className='errorNav'></div>
-
-					<div className='errorBody'>
-						<div className='logo'>
-							<svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
+export default function LogoSVG() {
+    return (
+        <svg className='Path_2076' viewBox='0 0.492 44.69 17.878'>
 								<path
 									id='Path_2076'
 									d='M 0.6391686201095581 4.968416690826416 L 5.698694705963135 4.245887279510498 C 6.62128210067749 3.679137229919434 7.578700542449951 3.171795129776001 8.565767288208008 2.726577520370483
@@ -49,50 +36,5 @@ C 11.82566070556641 1.249995231628418 15.3637809753418 0.4880675673484802 18.942
 									fill='#EF1D52'
 								></path>
 							</svg>
-						</div>
-						<h3 className='errorHeader' style={{}}>
-							TRANSIS
-						</h3>
-					</div>
-
-					<ErrorSVG />
-
-					<h3
-						style={{
-							color: '#FF4874',
-							fontFamily: 'sans-serif',
-							marginTop: '3%',
-						}}
-					>
-						Sorry we could'nt find the page
-					</h3>
-					<h3
-						style={{
-							fontFamily: 'sans-serif',
-							marginTop: '1%',
-							width: '77%',
-							textAlign: 'justify',
-						}}
-					>
-						We delight in getting you to where you need to go, but we can't get
-						you to the page you requested. Do double check the URL and try
-						again. You might be able to find what your'e looking for from our
-						homepage, click the button bellow to come home.
-					</h3>
-					<Link
-						to='/'
-						style={{
-							background: '#FF4874',
-							fontFamily: 'sans-serif',
-							borderRadius: '10px',
-							padding: '1% 4%',
-							width: '20%',
-						}}
-					>
-						Return Home
-					</Link>
-				</center>
-			</div>
-		);
-	}
+    )
 }

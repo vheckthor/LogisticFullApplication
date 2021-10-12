@@ -1,0 +1,20 @@
+#SignUpNav {
+    background-color: #ef1d52;
+}
+.container {
+    margin-top: 10%
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContainer > div {
+    cursor: pointer !important;
+}
+
+.cardContainer:last-child {
+    margin-left: 10% !important;
+}
