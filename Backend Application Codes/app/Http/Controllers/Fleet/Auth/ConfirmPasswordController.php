@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-
+use App\Models\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
@@ -28,7 +28,7 @@ class ConfirmPasswordController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/fleet';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -41,7 +41,7 @@ class ConfirmPasswordController extends Controller
     }
     protected function guard() 
     {
-        return Auth::guard('fleet');
+        return Auth::guard('admin');
     }
 
 }

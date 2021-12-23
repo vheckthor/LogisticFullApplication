@@ -13,6 +13,7 @@ class RedirectIfNotAdmin
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     * @param  string|null  $guard
      * @return mixed
      */
     public function handle($request, Closure $next, $guard = 'admin') {
@@ -22,3 +23,4 @@ class RedirectIfNotAdmin
         return $next($request);
     }
 }
+

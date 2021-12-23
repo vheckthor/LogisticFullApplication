@@ -25,6 +25,12 @@ class RedirectIfAuthenticated
                   return redirect('/admin');
                }
                   break;
+
+         case 'fleet':
+                        if (Auth::guard($guard)->check()) {
+                        return redirect('/fleet');
+                     }
+                        break;
      
           default:
                   if (Auth::guard($guard)->check()) {

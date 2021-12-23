@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Admin\Auth;
 
-use App\Models\Admin;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\Auth\PasswordResetRequest;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Auth\Events\PasswordReset;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
 
 class LoginController extends Controller
@@ -35,7 +32,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
+    protected $redirectTo = '/fleet';
 
     /**
      * Create a new controller instance.
@@ -44,7 +41,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:admin')->except('logout');
+        $this->middleware('guest:fleet')->except('logout');
     }
     
     /**
@@ -76,7 +73,7 @@ class LoginController extends Controller
 
    public function logout(Request $request)
    {
-       $this->guard('admin')->logout();
+       $this->guard('fleet')->logout();
 
        $request->session()->invalidate();
 
@@ -91,6 +88,6 @@ class LoginController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('admin');
+        return Auth::guard('fleet');
     }
 }

@@ -47,6 +47,11 @@ return [
             'provider' => 'admins', 
         ],
 
+        'fleet' => [
+            'driver'   => 'session',
+            'provider' => 'users',
+        ],
+
 
         'api' => [
             'driver' => 'jwt',
@@ -76,13 +81,14 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Admin::class,
         ],
         
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+        
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,

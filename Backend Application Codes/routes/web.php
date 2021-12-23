@@ -60,6 +60,12 @@ Route::post('/admin/register', function() { return redirect('/admin/login');});
         Route::post('password/reset', [ResetPasswordController::class, 'reset']);
         Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
         Route::get('admin/logout', [LoginController::class,'logout'])->name('logout');
+        
+        Route::get('profile', 'AdminController@profile')->name('profile');
+Route::post('profile', 'AdminController@profile_update')->name('profile.update');
+
+Route::get('password', 'AdminController@password')->name('password');
+Route::post('password', 'AdminController@password_update')->name('password.update');
    });
     
 /* Administration Routes */

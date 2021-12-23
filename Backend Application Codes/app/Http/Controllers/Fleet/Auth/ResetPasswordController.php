@@ -31,7 +31,7 @@ class ResetPasswordController extends Controller
      * @var string
      */
     
-    protected $redirectTo = '/fleet';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -40,7 +40,7 @@ class ResetPasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:fleet')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
         /**
@@ -76,7 +76,7 @@ class ResetPasswordController extends Controller
      */
     protected function guard()
     {
-        return Auth::guard('fleet');
+        return Auth::guard('admin');
     }
     
 }
