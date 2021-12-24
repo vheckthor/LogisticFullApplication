@@ -46,7 +46,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest:admin')->except('logout');
     }
-    
+
     /**
      * Show the application's login form.
      *
@@ -61,30 +61,31 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-       if ($this->attemptLogin($request)) {
-           return $this->sendLoginResponse($request);
-       }
+        if ($this->attemptLogin($request)) {
+            return $this->sendLoginResponse($request);
+        }
 
-       return $this->sendFailedLoginResponse($request);
-      
-   }
+        return $this->sendFailedLoginResponse($request);
+
+    }
+
     /**
      * Where to redirect users after Logout
      *
      * @return \Illuminate\Http\Response
      */
 
-   public function logout(Request $request)
-   {
-       $this->guard('admin')->logout();
+    public function logout(Request $request)
+    {
+        $this->guard('admin')->logout();
 
-       $request->session()->invalidate();
+        $request->session()->invalidate();
 
-       return redirect('admin/login');
-   }
+        return redirect('admin/login');
+    }
 
 
-     /**
+    /**
      * Get the guard to be used during authentication.
      *
      * @return \Illuminate\Contracts\Auth\StatefulGuard

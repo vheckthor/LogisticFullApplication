@@ -34,7 +34,7 @@ Route::get('location',[LocationController::class, 'index']);
 Route::get('remove-spec', function () {
     function clean($string) {
         $string = str_replace(' ', '', $string); // Replaces all spaces with hyphens.
-     
+
         return preg_replace('/[^0-9\.]+/', '', $string); // Removes special chars.
     }
 
@@ -50,7 +50,7 @@ Route::post('/admin/register', function() { return redirect('/admin/login');});
 
 
 
-    // Admin authentication 
+    // Admin authentication
  Route::group(['namespace' => 'Admin'] , function(){
         Route::get('admin/login', [LoginController::class, 'showAdminLoginForm'])->name('admin.login');
         Route::post('admin/login', [loginController::class, 'login']);
@@ -60,14 +60,14 @@ Route::post('/admin/register', function() { return redirect('/admin/login');});
         Route::post('password/reset', [ResetPasswordController::class, 'reset']);
         Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
         Route::get('admin/logout', [LoginController::class,'logout'])->name('logout');
-        
+
         Route::get('profile', 'AdminController@profile')->name('profile');
 Route::post('profile', 'AdminController@profile_update')->name('profile.update');
 
 Route::get('password', 'AdminController@password')->name('password');
 Route::post('password', 'AdminController@password_update')->name('password.update');
    });
-    
+
 /* Administration Routes */
 Route::middleware(['auth:admin'])->group(function () { // check for autherization
     Route::get('/admin', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
@@ -111,6 +111,8 @@ Route::post('admin/changeOrderStatus', [App\Http\Controllers\Admin\OrdersControl
 ///////////// Admin (Map)
 Route::get('admin/map', [App\Http\Controllers\Admin\LocationController::class, 'index'])->where('locale', implode('|', Config::get('app.locales')));
 Route::get('{locale}/admin/orders', [App\Http\Controllers\Admin\OrdersController::class, 'index']);
+
+
 
 
 });
