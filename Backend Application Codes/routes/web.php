@@ -112,7 +112,4 @@ Route::post('admin/changeOrderStatus', [App\Http\Controllers\Admin\OrdersControl
 Route::get('admin/map', [App\Http\Controllers\Admin\LocationController::class, 'index'])->where('locale', implode('|', Config::get('app.locales')));
 Route::get('{locale}/admin/orders', [App\Http\Controllers\Admin\OrdersController::class, 'index']);
 
-
-
-
 });
