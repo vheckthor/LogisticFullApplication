@@ -90,7 +90,7 @@ const login = async(req, res) => {
 const changePassword = async (req, res) => {
   try {
     const { oldPassword, newPassword } = req.body;
-    const user = await UserModel.findById(req.user.id);
+    const user = await userModel.findById(req.user.id);
 
     const match = await bcrypt.compareSync(oldPassword, user.password);
 
